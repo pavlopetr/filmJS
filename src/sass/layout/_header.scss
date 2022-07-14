@@ -1,0 +1,69 @@
+.header {
+  padding: 40px;
+  background-image: url(../imeges/abstract-bac.jpg);
+  background-size: cover;
+  width: 100%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--secondaryTextColor);
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.heder__dox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  margin-bottom: 49px;
+}
+
+.nav__list {
+  display: flex;
+
+}
+
+.nav__link {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--secondaryTextColor);
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 39px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
