@@ -1,24 +1,24 @@
 {{#each this}}
-<li class="film-card">
-  <img src="https://image.tmdb.org/t/p/w500/{{poster.path}}" alt="" loading="lazy" />
-  <div class="info">
-    <p class="film-tittle">
-      {{this.original_title}}
-    </p>
-    <p class="film-genre">
-    </p>
-    <p class="film-year">
-    {{this.release_date}}
-    </p>
-    <p class="film-raiting">
-     {{this.vote_average}}
-    </p>
-  </div>
-</li>
+  <li class='film-card'>
+    <img
+      src='https://image.tmdb.org/t/p/w500/{{this.poster_path}}'
+      alt=''
+      loading='lazy'
+    />
+    <div class='info'>
+      <p class='film-tittle'>
+        {{this.original_title}}
+      </p>
+      <p class='film-genre'>
+        {{#each genre_ids}} {{this}}{{#unless @last}}, {{/unless}}{{/each}}
+        &#8739;
+        {{this.release_date}}
+      </p>
+    </div>
+  </li>
 {{/each}}
 
-
-{{!-- "results": [
+{{! "results": [
         {
             "adult": false,
             "backdrop_path": "/kx2YVkcsnTnmF9XGTAj2NqEcHFG.jpg",
@@ -38,4 +38,4 @@
             "video": false,
             "vote_average": 7,
             "vote_count": 9670
-        }, --}}
+        }, }}
