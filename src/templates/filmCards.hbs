@@ -1,0 +1,41 @@
+{{#each this}}
+<div class="film-card">
+  <img src="https://image.tmdb.org/t/p/w500/{{poster.path}}" alt="" loading="lazy" />
+  <div class="info">
+    <p class="film-tittle">
+      {{this.original_title}}
+    </p>
+    <p class="film-ganre">
+    </p>
+    <p class="film-year">
+    {{this.release_date}}
+    </p>
+    <p class="film-raiting">
+     {{this.vote_average}}
+    </p>
+  </div>
+</div>
+{{/each}}
+
+
+{{!-- "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/kx2YVkcsnTnmF9XGTAj2NqEcHFG.jpg",
+            "genre_ids": [
+                28,
+                53,
+                878
+            ],
+            "id": 49530,
+            "original_language": "en",
+            "original_title": "In Time",
+            "overview": "In the not-too-distant future the aging gene has been switched off. To avoid overpopulation, time has become the currency and the way people pay for luxuries and necessities. The rich can live forever, while the rest try to negotiate for their immortality. A poor young man who comes into a fortune of time, though too late to help his mother from dying. He ends up on the run from a corrupt police force known as 'time keepers'.",
+            "popularity": 111.46,
+            "poster_path": "/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg",
+            "release_date": "2011-10-27",
+            "title": "In Time",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 9670
+        }, --}}
