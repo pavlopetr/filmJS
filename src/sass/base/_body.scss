@@ -1,0 +1,22 @@
+:root {
+  --accent-color: #ff6b01;
+  --primaryTextColor: #000000;
+  --secondaryTextColor: #ffffff;
+  --footerTextColor: #545454;
+
+  // --card-gap: 30px;
+  // --card-item: 1;
+}
+
+body {
+  margin: 0;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  //   color: var(--primaryTextColor);
+
+  background-color: #ffffff;
+  //   overflow-x: hidden;
+}
