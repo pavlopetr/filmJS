@@ -1,11 +1,11 @@
 {{#each this}}
-<div class="film-card">
+<li class="film-card">
   <img src="https://image.tmdb.org/t/p/w500/{{poster.path}}" alt="" loading="lazy" />
   <div class="info">
     <p class="film-tittle">
       {{this.original_title}}
     </p>
-    <p class="film-ganre">
+    <p class="film-genre">
     </p>
     <p class="film-year">
     {{this.release_date}}
@@ -14,7 +14,7 @@
      {{this.vote_average}}
     </p>
   </div>
-</div>
+</li>
 {{/each}}
 
 
