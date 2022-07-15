@@ -12,5 +12,6 @@ src='https://png.pngtree.com/png-clipart/20211121/original/pngtree-not-found-sta
 <p>Original title {{this.original.title}}</p>
 <p>Genre {{#each this.genres}}{{this.name}}{{/each}}</p>
 <p>About {{this.overview}}</p>
-<button type='button'>Add to watched</button>
-<button type='button'>Add to queue</button>
+<article class="film-id is-hidden ">{{this.id}}</article>
+<button type='button' data-watched>Add to watched</button>
+<button type='button' data queue>Add to queue</button>
