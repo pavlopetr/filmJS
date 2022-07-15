@@ -1,5 +1,5 @@
-<header class="header co">
-    <div class="heder__dox">
+<header class="header_library ">
+    <div class="heder__dox container">
         <a class="logo" href="#"><span class="icon"><svg class="icon__logo" width="24" height="24">
                     <use href="./images/srait.svg#icon-film"></use>
                 </svg>
@@ -11,15 +11,13 @@
                     <a class="nav__link" href="./index.html">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link" href="">my library</a>
+                    <a class="nav__link nav-akcent" href="./library.html">my library</a>
                 </li>
             </ul>
         </nav>
     </div>
-    <form class="search-form" id="search-form">
-        <input class="imput_form" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" />
-        <button class="btn__form" type="submit"><svg class="" width="12" height="12">
-                <use href="./images/srait.svg#icon-search"></use>
-            </svg></button>
-    </form>
+    <div class="btn_box">
+        <button class="btn_click  is-open" type="submit">Watched</button>
+        <button class="btn_click" type="submit">Queue</button>
+    </div>
 </header>
