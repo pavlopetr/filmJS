@@ -1,11 +1,30 @@
 .header_library {
-  background-image: url(../images/abstract-bac.jpg);
+  background-image: url(../images/abstract-mob.jpg);
   background-size: cover;
   width: 100%;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-position: center;
-  padding-bottom: 60px;
+  padding-bottom: 62px;
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/abstract-tab.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/abstract-bac.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    width: 100%;
+  }
 
 }
 
@@ -17,7 +36,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 60px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
 }
 
 .btn_click {
