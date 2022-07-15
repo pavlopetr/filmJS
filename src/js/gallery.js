@@ -25,7 +25,6 @@ export class GalleryApi {
   fetchRandomMovies() {
     return axios(
       `3/discover/movie?api_key=f529977bca559aa35fc4139c14353d12&sort_by=popularity.desc&per_page=${this.perPage}`
-
     ).then(response => response.data);
   }
 
@@ -36,5 +35,11 @@ export class GalleryApi {
     };
 
     return axios(`3/genre/movie/list`).then(response => response.data.genres);
+  }
+
+  fetchMovieById(id) {
+    return axios(
+      `3/movie/${id}?api_key=f529977bca559aa35fc4139c14353d12&language=en-US`
+    ).then(response => response.data);
   }
 }
