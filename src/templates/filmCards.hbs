@@ -1,8 +1,12 @@
 {{#each this}}
   <li class='film-card'>
     <img
+      {{#if this.poster_path}} 
       src='https://image.tmdb.org/t/p/w500/{{this.poster_path}}'
-      alt=''
+      {{else}} 
+      src='https://png.pngtree.com/png-clipart/20211121/original/pngtree-not-found-stamp-label-png-image_6948403.png'
+      {{/if}}
+      alt='Poster of movie "{{this.original_title}}"'
       loading='lazy'
     />
     <div class='info'>

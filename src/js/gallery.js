@@ -24,7 +24,7 @@ export class GalleryApi {
 
   fetchRandomMovies() {
     return axios(
-      `3/discover/movie?api_key=f529977bca559aa35fc4139c14353d12&certification_country=US&certification.lte=G&sort_by=popularity.des&      per_page=${this.perPage}`
+      `3/discover/movie?api_key=f529977bca559aa35fc4139c14353d12&certification_country=US&certification.lte=G&sort_by=popularity.des&     per_page=${this.perPage}`
     ).then(response => response.data);
   }
 
