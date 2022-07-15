@@ -1,10 +1,12 @@
 import { GalleryApi } from './js/gallery';
 import Notiflix from 'notiflix';
 import createCardOfMovie from './templates/filmCards.hbs';
+import createModal from './templates/modal.hbs';
 
 const formEl = document.querySelector('#search-form');
 const inputEl = document.querySelector('.imput_form');
 const containerEl = document.querySelector('.cards-film_list');
+const modal = document.querySelector('.modal');
 
 const galleryApi = new GalleryApi();
 
@@ -45,6 +47,7 @@ function onFormSubmit(event) {
       changeIdOfGenreToName(data.results);
       changeDateInArrayOfResults(data.results);
       containerEl.innerHTML = createCardOfMovie(data.results);
+      containerEl.addEventListener('click', onContainerClick);
     })
     .catch(error => createAlertFailure(error));
 }
@@ -58,8 +61,20 @@ function createRandomMarkup() {
       changeIdOfGenreToName(data.results);
       changeDateInArrayOfResults(data.results);
       containerEl.innerHTML = createCardOfMovie(data.results);
+      containerEl.addEventListener('click', onContainerClick);
     })
     .catch(error => createAlertFailure(error));
+}
+
+function onContainerClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+  galleryApi.fetchMovieById(event.target.id).then(data => {
+    const markupModal = createModal(data);
+    modal.innerHTML = markupModal;
+    modal.closest('.backdrop').classList.remove('is-hidden');
+  });
 }
 
 function changePerPageOfQuery() {
