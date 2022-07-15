@@ -1,7 +1,14 @@
 {{#each this}}
   <li class='film-card'>
     <img
+    {{#if this.poster_path}}
       src='https://image.tmdb.org/t/p/w500/{{this.poster_path}}'
+    {{else}}
+    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzSNZ9UiCgNz43gagy01RwckgkYJ_PrzL9Gw&usqp=CAU'
+    width="500"
+    height="750"
+
+       {{/if}}
       alt=''
       loading='lazy'
     />
