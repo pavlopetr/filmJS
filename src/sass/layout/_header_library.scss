@@ -1,0 +1,51 @@
+.header_library {
+  background-image: url(../images/abstract-bac.jpg);
+  background-size: cover;
+  width: 100%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 60px;
+
+}
+
+.nav-akcent {
+  border-bottom: 2.5px solid #FF001B;
+}
+
+.btn_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.btn_click {
+  width: 148px;
+  height: 42px;
+  background: transparent;
+  border-radius: 5px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+
+  border: 1px solid #FFFFFF;
+
+
+  color: var(--secondaryTextColor);
+
+
+}
+
+.btn_click:not(:last-child) {
+  margin-right: 16px;
+}
+
+.is-open {
+  background: #FF6B01;
+  border: none;
+}
