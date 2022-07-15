@@ -1,14 +1,38 @@
 .cards-film_list {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    --card-item: 2;
+  }
+  @media screen and (min-width: 1280px) {
+    --card-item: 3;
+  }
 }
+
 .film-card {
+  //   margin-top: 20px;
+  border-radius: 5px;
+}
+.film-image {
+  display: block;
+  width: 100%;
 }
 .info {
+  //   padding-top: 12px;
+  //   max-width: 280px;
+  //   max-height: 32px;
+  //   font-family: 'Roboto';
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 12px;
+  //   line-height: 1.33;
+  //   text-transform: uppercase;
 }
 .film-tittle {
+  color: #000000;
 }
 .film-genre {
+  color: #ff6b08;
 }
 .film-year {
 }

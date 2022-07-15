@@ -1,5 +1,5 @@
 {{#each this}}
-  <li class='film-card'>
+  <li class='film-card card-item'>
     <img
       {{#if this.poster_path}} 
       src='https://image.tmdb.org/t/p/w500/{{this.poster_path}}'
@@ -8,6 +8,7 @@
       {{/if}}
       alt='Poster of movie "{{this.original_title}}"'
       loading='lazy'
+      class="film-image"
     />
     <div class='info'>
       <p class='film-tittle'>
