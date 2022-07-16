@@ -1,9 +1,17 @@
+import { galleryApi } from './randomFilms';
+
+export const createArrayOfGenres = () => {
+  galleryApi.fetchGenres().then(data => {
+    galleryApi.arrayOfGenres = data;
+  });
+};
+
 export const changeIdOfGenreToName = arrayOfResults => {
   const arrayIdOfGenres = arrayOfResults.map(el => el.genre_ids);
 
   for (let i = 0; i < arrayIdOfGenres.length; i++) {
     arrayIdOfGenres[i].forEach((el, index, array) => {
-      const object = arrayAllGenresMovie.find(genre => genre.id === el);
+      const object = galleryApi.arrayOfGenres.find(genre => genre.id === el);
       array[index] = object.name;
     });
   }

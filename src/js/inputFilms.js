@@ -2,18 +2,18 @@ import { changeIdOfGenreToName } from './datesForMarkup';
 import { changeDateInArrayOfResults } from './datesForMarkup';
 import { changePerPageOfQuery } from './mediaPerPage';
 import { galleryApi } from './randomFilms';
+import { containerEl } from './randomFilms';
 import { createRandomMarkup } from './randomFilms';
+import { createAlertFailure } from './alert';
+import createFilmCards from '../templates/filmCards.hbs';
 
 const formEl = document.querySelector('#search-form');
 formEl.addEventListener('submit', onFormSubmit);
 
-let arrayAllGenresMovie = null;
-createArrayOfGenres();
-
 function onFormSubmit(event) {
   event.preventDefault();
   galleryApi.page = 1;
-  galleryApi.query = event.currentTarget.element.searchQuery.value.trim();
+  galleryApi.query = event.currentTarget.elements.searchQuery.value.trim();
 
   changePerPageOfQuery();
 
@@ -36,13 +36,6 @@ function onFormSubmit(event) {
       changeIdOfGenreToName(data.results);
       changeDateInArrayOfResults(data.results);
       containerEl.innerHTML = createFilmCards(data.results);
-      containerEl.addEventListener('click', onContainerClick);
     })
     .catch(error => createAlertFailure(error));
-}
-
-function createArrayOfGenres() {
-  galleryApi.fetchGenres().then(data => {
-    arrayAllGenresMovie = data;
-  });
 }

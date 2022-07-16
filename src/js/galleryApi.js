@@ -9,6 +9,7 @@ export class GalleryApi {
     this.page = 1;
     this.query = null;
     this.perPage = null;
+    this.arrayOfGenres = null;
   }
 
   fetchMovies() {
