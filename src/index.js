@@ -19,8 +19,9 @@ galleryApi.fetchGenres().then(data => {
 });
 
 createRandomMarkup();
-
-formEl.addEventListener('submit', onFormSubmit);
+if (formEl) {
+  formEl.addEventListener('submit', onFormSubmit);
+}
 
 function onFormSubmit(event) {
   event.preventDefault();
