@@ -2,6 +2,7 @@ import { GalleryApi } from './js/gallery';
 import Notiflix from 'notiflix';
 import createCardOfMovie from './templates/filmCards.hbs';
 import createModal from './templates/modal.hbs';
+import './js/to_LocalStor';
 
 const formEl = document.querySelector('#search-form');
 const inputEl = document.querySelector('.imput_form');
@@ -18,8 +19,9 @@ galleryApi.fetchGenres().then(data => {
 });
 
 createRandomMarkup();
-
-formEl.addEventListener('submit', onFormSubmit);
+if (formEl) {
+  formEl.addEventListener('submit', onFormSubmit);
+}
 
 function onFormSubmit(event) {
   event.preventDefault();
