@@ -7,7 +7,7 @@ const modalContainerEl = document.querySelector('.modal');
 const containerEl = document.querySelector('.library-film_list');
 // const libraryLinkEl = document.querySelector('#library');
 const titleEl = document.querySelector('#pageId');
-console.log('object :>> ', titleEl);
+// console.log('object :>> ', titleEl);
 let toWatchArr = [];
 let queueArr = [];
 
