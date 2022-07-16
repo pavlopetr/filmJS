@@ -30,6 +30,7 @@
   padding: 0 20px;
   padding-top: 48px;
   padding-bottom: 40px;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -46,6 +47,58 @@
 
   }
 
+
+}
+
+.close-button {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  right: 8px;
+  top: 8px;
+
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.icon-cose {
+  display: flex;
+  width: 11px;
+  height: 11px;
+  transition: fill var(--transition);
+
+  &:hover .icon-cose,
+  &:focus .icon-cose {
+    fill: var(--accent-color);
+  }
+}
+
+.svg {
+  width: 12px;
+  height: 12px;
+}
+
+.modal-clouse-btn {
+  position: absolute;
+  top: 8px;
+  left: 242px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+
+.icon__close {
+  display: block;
+  fill: #000000;
 }
 
 .modal__img {
