@@ -3,26 +3,37 @@ import ls from './storage';
 
 const modalContainerEl = document.querySelector('.modal');
 
-let toWatchArry = [];
-let temp = ls.load(`toWatch`);
-console.dir(temp);
-// if (toWatchArry.length === 0) {
-//   toWatchArry = ls.load(`toWatch`);
-// }
+let toWatchArr = [];
+let queueArr = [];
 
-// console.log('before :>> ', toWatchArry);
+if (toWatchArr.length === 0 && ls.load(`toWatch`).length > 0) {
+  ls.load(`toWatch`).forEach(el => {
+    toWatchArr.push(el);
+  });
+}
+if (queueArr.length === 0 && ls.load(`queue`).length > 0) {
+  ls.load('queue').forEach(el => {
+    queueArr.push(el);
+  });
+}
+
+console.log('before :>> ', toWatchArr);
 
 modalContainerEl.addEventListener('click', e => {
   e.preventDefault;
   const parentLi = modalContainerEl.querySelector('.film-id');
   const filmID = parentLi.textContent;
-  // console.dir(e.target);
+  console.dir(e.target);
   if (e.target.textContent === 'Add to watched') {
-    toWatchArry.push(filmID);
-    // localStorage.clear(`toWatch`);
-    ls.save(`toWatch`, toWatchArry);
+    // добавить проверку на содержимое массива (без повтороний)
+    toWatchArr.push(filmID);
+    ls.save(`toWatch`, toWatchArr);
+  }
+  if (e.target.textContent === 'Add to queue') {
+    // добавить проверку на содержимое массива (без повтороний)
+    queueArr.push(filmID);
+    ls.save('queue', queueArr);
   }
 });
 
-// console.log('arrr :>> ', toWatchArry);
-// ['data-watched'].name;
+console.log('aft:>> ', toWatchArr);
