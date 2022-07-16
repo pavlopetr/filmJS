@@ -45,7 +45,6 @@ const galleryApi = new GalleryApi();
 if (titleEl.textContent === 'My library') {
   for (let i of toWatchArr) {
     galleryApi.fetchMovieById(i).then(data => {
-      console.log('i :>> ', data);
       const markup = createCardOfMovie(data);
       containerEl.insertAdjacentHTML('beforeend', markup);
     });
