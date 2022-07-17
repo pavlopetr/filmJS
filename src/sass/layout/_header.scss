@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   background-image: url(../images/abstract-mob.jpg);
   background-size: cover;
   width: 100%;
@@ -26,8 +27,6 @@
     width: 100%;
     padding-bottom: 80px;
   }
-
-
 }
 
 .logo {
@@ -64,7 +63,6 @@
   @media screen and (min-width: 768px) {
     margin-right: 10px;
   }
-
 }
 
 .heder__dox {
@@ -143,7 +141,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-
 }
 
 .btn__form {
