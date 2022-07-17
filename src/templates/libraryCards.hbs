@@ -15,15 +15,9 @@
         {{this.original_title}}
       </p>
       <p class='film-genre'>
-        {{#each genre_ids}} {{this}}{{#unless @last}}, {{/unless}}{{/each}}
+{{#each this.genres}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}
         &#8739;
         {{this.release_date}}
       </p>
-      {{!-- <p class ='film-id is-hidden'>
-        {{this.id}}
-      </p> --}}
-      {{!-- <p class ='film-rate is-hidden'>
-        {{this.vote_average}}
-      </p> --}}
     </div>
   </li>

@@ -23,11 +23,9 @@ src='https://png.pngtree.com/png-clipart/20211121/original/pngtree-not-found-sta
 <p class="modal__label">Vote / Votes <span class="votes-box"> <span class="modal__vote">{{vote_average}}</span>  / <span class="modal__votes"> {{vote_count}}</span> </span></p>
 <p class="modal__label">Popularity <span class="modal__populars">{{this.popularity}}</span> </p>
 <p class="modal__label">Original title <span class="origenal__tatel">{{this.original_title}}</span> </p>
-{{!-- <p class="modal__label">Genre <span class="modal__genre" > {{#each this.genres}}{{this.name}} <span class="gender_ris">/</span>{{/each}}</span></p> --}}
-<p class="modal__label">Genre <span class="modal__genre" > {{#each this.genres}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}</span></p>
+<p class="modal__label">Genre {{#each this.genres}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}</p>
 <h3 class="about">About</h3>
 <p class="about_text"> {{this.overview}}</p>
-{{!-- <article class="film-id is-hidden ">{{this.id}}</article> --}}
 <div class="btn__modal"><button class="btn__add btn__add-click" type='button' data-action="watched" data-id="{{this.id}}">Add to watched</button>
 <button class="btn__add " type='button' data-action="queue" data-id="{{this.id}}">Add to queue</button></div>
 </div>

@@ -1,10 +1,11 @@
-import { changeIdOfGenreToName } from './datesForMarkup';
-import { changeDateInArrayOfResults } from './datesForMarkup';
+import { galleryApi, containerEl, createRandomMarkup } from './randomFilms';
+import {
+  changeIdOfGenreToName,
+  changeDateInArrayOfResults,
+} from './datesForMarkup';
 import { changePerPageOfQuery } from './mediaPerPage';
-import { galleryApi } from './randomFilms';
-import { containerEl } from './randomFilms';
-import { createRandomMarkup } from './randomFilms';
 import { createAlertFailure } from './alert';
+import { onPosterClick } from './modal';
 import createFilmCards from '../templates/filmCards.hbs';
 
 const formEl = document.querySelector('#search-form');
@@ -36,6 +37,7 @@ function onFormSubmit(event) {
       changeIdOfGenreToName(data.results);
       changeDateInArrayOfResults(data.results);
       containerEl.innerHTML = createFilmCards(data.results);
+      containerEl.addEventListener('click', onPosterClick);
     })
     .catch(error => createAlertFailure(error));
 }
