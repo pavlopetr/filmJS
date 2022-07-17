@@ -1,16 +1,23 @@
 'use strict';
-// по хорошему - добавить класс "темный" на карточку и bodyб прописать им css - и при checked - добавлять классы
+import ls from './storage';
+
 const cneckBoxEl = document.querySelector('[name="ligthswitcher"]');
 const bodyEl = document.querySelector('body');
-// const filmTitleEl = document.querySelector('.film-name');
-// console.log('object :>> ', filmTitleEl);
-cneckBoxEl.addEventListener('click', e => {
+
+const switherMode = ls.load('light');
+if (switherMode === 'off') {
+  cneckBoxEl.checked = true;
+  bodyEl.classList.add('night');
+}
+
+cneckBoxEl.addEventListener('change', nigthlight);
+
+function nigthlight() {
   if (cneckBoxEl.checked) {
-    bodyEl.style.backgroundColor = '#141414';
+    ls.save('light', 'off');
+    bodyEl.classList.add('night');
   } else {
-    bodyEl.style.backgroundColor = '#fff';
+    bodyEl.classList.remove('night');
+    ls.save('light', 'on');
   }
-});
-// document.querySelector(
-//   'body > section > ul > li:nth-child(1) > div > p.film-tittle'
-// );
+}

@@ -19,8 +19,12 @@ body {
   line-height: 1.2;
   //   color: var(--primaryTextColor);
 
-  background-color: #ffffff;
+  // background-color: #ffffff;
   //   overflow-x: hidden;
+}
+.night {
+  background: #141414;
+  transition: 0.5s;
 }
 
 h1,
@@ -31,6 +35,9 @@ h5,
 h6,
 p {
   margin: 0;
+}
+h3 .night-theme {
+  color: #ffffff;
 }
 
 ul {
@@ -59,3 +66,4 @@ img {
 button {
   cursor: pointer;
 }
+
