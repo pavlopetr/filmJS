@@ -30,6 +30,6 @@ export const createRandomMarkup = () => {
     .catch(error => createAlertFailure(error));
 };
 
-if (document.location.href === 'http://localhost:1234/index.html') {
+if (document.location.href === 'http://localhost:56689/index.html') {
   createRandomMarkup();
 }
