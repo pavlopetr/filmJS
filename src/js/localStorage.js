@@ -36,6 +36,10 @@ export const onModalClick = event => {
     event.target.textContent = 'add to queue';
     event.target.addEventListener('click', onModalClick);
   }
+  if(event.target.dataset.action==="close"){
+    const modal = document.querySelector('.modal');
+    modal.closest('.backdrop').classList.add('is-hidden')
+  }
 };
 
 export const updateDataForLocalStorage = () => {
