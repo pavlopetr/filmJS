@@ -29,6 +29,7 @@ export class GalleryApi {
     axios.defaults.params = {
       api_key: this.#API_KEY,
       per_page: this.perPage,
+      page: this.page,
     };
 
     return axios(`3/trending/movie/day`).then(response => response.data);
