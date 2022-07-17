@@ -14,7 +14,7 @@ const buttonQueueEl = document.querySelector('button[data-queue]');
 
 if (
   document.location.href ===
-  'http://mykhailotsynkevych.github.io/Filmoteka/library.html'
+  'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
 ) {
   createMarkupWatchLocalStorage();
 }
