@@ -4,11 +4,14 @@
                 </svg>
 </button> --}}
 
- <button class="close-button" type="button" data-modal-close>
-          <svg class="icon-cose" width="30" height="30">
-            <use class="svg" href="../images/sprait.svg#icon-menu-cross"></use>
-          </svg>
+
+ <button class="close-button" type="button" data-action= "close">
+          {{!-- <svg class="icon-cose" width="30" height="30">
+            <use class="svg" href="./images/srait.svg#icon-close"></use>
+          </svg> --}}
         </button>
+
+
 <img class="modal__img"
 {{#if this.poster_path}} 
 src='https://image.tmdb.org/t/p/w500/{{this.poster_path}}'

@@ -35,4 +35,6 @@ function onKeyboardPress(event) {
   }
   modal.removeEventListener('click', onModalClick);
   document.removeEventListener('keydown', onKeyboardPress);
+  
 }
+

@@ -74,7 +74,7 @@
   display: flex;
   width: 11px;
   height: 11px;
-  transition: fill var(--transition);
+  // transition: fill var(--transition);
 
   &:hover .icon-cose,
   &:focus .icon-cose {
@@ -100,6 +100,8 @@
   display: block;
   fill: #000000;
 }
+
+// --------------
 
 .modal__img {
   display: block;
