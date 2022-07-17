@@ -36,6 +36,7 @@ input[type='checkbox']:before {
   box-shadow: 0 0 0 1px #232323;
   transform: scale(0.98, 0.96);
   transition: 0.5s;
+  z-index: 2;
 }
 input:checked[type='checkbox']:before {
   left: 30px;
@@ -50,9 +51,35 @@ input[type='checkbox']:after {
   background: linear-gradient(0deg, #6b6b6b, #000);
   border-radius: 50%;
   transition: 0.5s;
+  z-index: 3;
 }
 input:checked[type='checkbox']:after {
   background: #63cdff;
   left: 80px;
   box-shadow: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
+}
+
+.switch-icons {
+  position: relative;
+}
+
+.moon-icon {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.sun-icon {
+  position: absolute;
+  top: 5px;
+  left: 65px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  fill: yellow;
+}
+.sun-icon .is-off {
+  fill: black;
 }
