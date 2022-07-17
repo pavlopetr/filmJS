@@ -8,10 +8,9 @@ import { createAlertFailure } from './alert';
 import { onPosterClick } from './modal';
 import createFilmCards from '../templates/filmCards.hbs';
 
-const formEl = document.querySelector('#search-form');
-formEl.addEventListener('submit', onFormSubmit);
+export const formEl = document.querySelector('#search-form');
 
-function onFormSubmit(event) {
+export const onFormSubmit = event => {
   event.preventDefault();
   galleryApi.page = 1;
   galleryApi.query = event.currentTarget.elements.searchQuery.value.trim();
@@ -40,4 +39,4 @@ function onFormSubmit(event) {
       containerEl.addEventListener('click', onPosterClick);
     })
     .catch(error => createAlertFailure(error));
-}
+};

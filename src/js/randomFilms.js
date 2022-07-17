@@ -9,6 +9,7 @@ import { changePerPageOfQuery } from './mediaPerPage';
 import { onPosterClick } from './modal';
 import { updateDataForLocalStorage } from './localStorage';
 import createFilmCards from '../templates/filmCards.hbs';
+import { formEl, onFormSubmit } from './inputFilms';
 
 export const containerEl = document.querySelector('.cards-film_list');
 
@@ -25,11 +26,11 @@ export const createRandomMarkup = () => {
       changeIdOfGenreToName(data.results);
       changeDateInArrayOfResults(data.results);
       containerEl.innerHTML = createFilmCards(data.results);
+      formEl.addEventListener('submit', onFormSubmit);
+
       containerEl.addEventListener('click', onPosterClick);
     })
     .catch(error => createAlertFailure(error));
 };
 
-if (document.location.href === 'http://localhost:56689/index.html') {
-  createRandomMarkup();
-}
+createRandomMarkup();
