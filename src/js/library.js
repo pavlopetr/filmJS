@@ -6,29 +6,48 @@ import { updateDataForLocalStorage } from './localStorage';
 import { changeColorBtnLibraryClick } from './colorButton';
 
 const containerLibraryElement = document.querySelector('.library-film_list');
-
 const buttonWatchEl = document.querySelector('button[data-watched]');
 const buttonQueueEl = document.querySelector('button[data-queue]');
 
-if (document.location.href === 'http://localhost:1234/library.html') {
+// if (document.location.href === 'http://localhost:56790/library.html') {
+//   createMarkupLibraryMain();
+// }
+
+if (
+  document.location.href ===
+  'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
+) {
   createMarkupWatchLocalStorage();
 }
 
-// if (
-//   document.location.href ===
-//   'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
-// ) {
-//   createMarkupWatchLocalStorage();
-// }
-
 function onButtonWatchEl(event) {
-  createMarkupWatchLocalStorage();
   changeColorBtnLibraryClick(event, buttonQueueEl);
+  createMarkupWatchLocalStorage();
 }
 
 function onButtonQueueEl(event) {
-  createMarkupQueueLocalStorage();
   changeColorBtnLibraryClick(event, buttonWatchEl);
+  createMarkupQueueLocalStorage();
+}
+
+function createMarkupLibraryMain() {
+  buttonWatchEl.addEventListener('click', onButtonWatchEl);
+  buttonQueueEl.addEventListener('click', onButtonQueueEl);
+  updateDataForLocalStorage();
+  containerLibraryElement.innerHTML = '';
+
+  if (galleryApi.watchArr.length === 0) {
+    createAlertFailure("You don't have watched films in your library");
+    return;
+  }
+  for (let i of galleryApi.watchArr) {
+    galleryApi
+      .fetchMovieById(i)
+      .then(data => {
+        createMarkupForLibrary(data);
+      })
+      .catch(error => createAlertFailure(error));
+  }
 }
 
 function createMarkupWatchLocalStorage() {
@@ -37,14 +56,13 @@ function createMarkupWatchLocalStorage() {
 
   if (galleryApi.watchArr.length === 0) {
     createAlertFailure("You don't have watched films in your library");
+    return;
   }
   for (let i of galleryApi.watchArr) {
     galleryApi
       .fetchMovieById(i)
       .then(data => {
         createMarkupForLibrary(data);
-        buttonWatchEl.addEventListener('click', onButtonWatchEl);
-        buttonQueueEl.addEventListener('click', onButtonQueueEl);
       })
       .catch(error => createAlertFailure(error));
   }
@@ -56,6 +74,7 @@ function createMarkupQueueLocalStorage() {
 
   if (galleryApi.queueArr.length === 0) {
     createAlertFailure("You don't have watched films in your library");
+    return;
   }
   for (let i of galleryApi.queueArr) {
     galleryApi

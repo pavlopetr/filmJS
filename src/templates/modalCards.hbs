@@ -29,8 +29,8 @@ src='https://png.pngtree.com/png-clipart/20211121/original/pngtree-not-found-sta
 <p class="modal__label">Genre <span class="modal__genre" >{{#each this.genres}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}</span></p>
 <h3 class="about">About</h3>
 <p class="about_text"> {{this.overview}}</p>
-<div class="btn__modal"><button class="btn__add btn__add-click" type='button' data-action="watched" data-id="{{this.id}}">Add to watched</button>
-<button class="btn__add " type='button' data-action="queue" data-id="{{this.id}}">Add to queue</button></div>
+<div class="btn__modal"><button class="btn__add btn__add-click js-watch" type='button' data-action="watched" data-id="{{this.id}}">Add to watched</button>
+<button class="btn__add js-queue" type='button' data-action="queue" data-id="{{this.id}}">Add to queue</button></div>
 </div>
 
 
