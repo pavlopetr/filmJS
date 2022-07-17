@@ -12,6 +12,16 @@ export const onPosterClick = event => {
     .fetchMovieById(event.target.id)
     .then(data => {
       modal.innerHTML = createModalCards(data);
+      if (galleryApi.watchArr.includes(event.target.id)) {
+        const buttonWatchedEl = modal.querySelector('[data-action="watched"]');
+        buttonWatchedEl.dataset.action = 'remove watched';
+        buttonWatchedEl.textContent = 'remove from watched';
+      }
+      if (galleryApi.queueArr.includes(event.target.id)) {
+        const buttonQueueEl = modal.querySelector('[data-action="queue"]');
+        buttonQueueEl.dataset.action = 'remove queue';
+        buttonQueueEl.textContent = 'remove from queue';
+      }
       modal.closest('.backdrop').classList.remove('is-hidden');
       modal.addEventListener('click', onModalClick);
       document.addEventListener('keydown', onKeyboardPress);
