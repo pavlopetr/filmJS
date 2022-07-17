@@ -9,16 +9,16 @@ const containerLibraryElement = document.querySelector('.library-film_list');
 const buttonWatchEl = document.querySelector('button[data-watched]');
 const buttonQueueEl = document.querySelector('button[data-queue]');
 
-// if (document.location.href === 'http://localhost:56790/library.html') {
+if (document.location.href === 'http://localhost:1234/library.html') {
+  createMarkupLibraryMain();
+}
+
+// if (
+//   document.location.href ===
+//   'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
+// ) {
 //   createMarkupLibraryMain();
 // }
-
-if (
-  document.location.href ===
-  'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
-) {
-  createMarkupWatchLocalStorage();
-}
 
 function onButtonWatchEl(event) {
   changeColorBtnLibraryClick(event, buttonQueueEl);
