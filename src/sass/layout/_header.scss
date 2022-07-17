@@ -143,6 +143,10 @@
   line-height: 16px;
 }
 
+.imput_form:focus {
+  outline: none;
+}
+
 .btn__form {
   background-color: transparent;
   border: none;
