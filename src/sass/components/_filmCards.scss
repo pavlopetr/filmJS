@@ -37,13 +37,17 @@
   }
 }
 .info {
-  padding-top: 12px;
-  max-width: 280px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
+  //   padding-top: 12px;
+  //   max-width: 280px;
+  //   max-height: 32px;
+  //   font-family: 'Roboto';
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 12px;
+  //   line-height: 1.33;
+  //   text-transform: uppercase;
+}
+
   @media screen and (min-width: 768px) {
     max-width: 336px;
   }
@@ -56,6 +60,10 @@
 .film-tittle {
   text-transform: uppercase;
   color: #000000;
+  
+    body.night & {
+    color: #fff;
+  }
 }
 
 .film-genre {
