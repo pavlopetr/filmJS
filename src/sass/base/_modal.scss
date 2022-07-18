@@ -111,29 +111,36 @@
   }
 }
 
-.modal__label {
-  font-size: 12px;
-  line-height: 1.33;
-  /* identical to box height, or 133% */
-  color: #8c8c8c;
+
+.info-items {
+  display: flex;
+  align-items: baseline;
 }
 
-.modal__label:not(:last-child) {
+.info-items:not(:last-child) {
   margin-bottom: 8px;
 }
 
+.modal__label {
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8c8c8c;
+  min-width: 108px;
+}
+
+
+
 .votes-box {
-  margin-left: 41px;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8c8c8c;
 }
 
 .modal__vote {
   width: 36px;
   height: 16px;
-
   font-size: 12px;
   line-height: 1.16;
-
-  /* identical to box height */
   padding: 1px;
   padding-left: 8px;
   padding-right: 5px;
@@ -152,7 +159,7 @@
   font-size: 12px;
   line-height: 14px;
   color: var(--primaryTextColor);
-  margin-left: 53px;
+
 }
 
 .origenal__tatel {
@@ -160,20 +167,19 @@
   line-height: 1.16;
   text-transform: uppercase;
   color: var(--primaryTextColor);
-  margin-left: 42px;
+
 }
 
 .modal__genre {
   font-size: 12px;
   line-height: 1.16;
   color: var(--primaryTextColor);
-  margin-left: 76px;
+
 }
 
 .gender_ris {
   font-size: 12px;
   line-height: 1.33;
-  /* identical to box height, or 133% */
   color: #8c8c8c;
 }
 
