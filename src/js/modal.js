@@ -26,7 +26,7 @@ export const onPosterClick = event => {
       modal.addEventListener('click', onModalClick);
       document.addEventListener('keydown', onKeyboardPress);
     })
-    .catch(error => console.log(error));
+    .catch(error => createAlertFailure(error));
 };
 
 function onKeyboardPress(event) {
