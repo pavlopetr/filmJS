@@ -2,6 +2,7 @@ import ls from './storage';
 import { galleryApi } from './randomFilms';
 import { changeColorBtnHomeClick } from './colorButton';
 import { onKeyboardPress } from './modal';
+import { deleteFilmFromMarkup } from './deleteFilmFromLibrary';
 
 export const onModalClick = event => {
   if (event.target.nodeName !== 'BUTTON') {
@@ -38,6 +39,7 @@ export const onModalClick = event => {
       break;
 
     case 'remove queue':
+      console.log(filmID);
       const indexQueue = galleryApi.queueArr.indexOf(filmID);
       galleryApi.queueArr.splice(indexQueue, 1);
       ls.save('queue', galleryApi.queueArr);
@@ -48,6 +50,11 @@ export const onModalClick = event => {
 
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
+
+      if (location.href === 'http://localhost:1234/library.html') {
+        deleteFilmFromMarkup(event);
+      }
+
       event.currentTarget.removeEventListener('click', onModalClick);
       document.removeEventListener('keydown', onKeyboardPress);
       break;

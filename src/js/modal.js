@@ -1,6 +1,7 @@
 import { galleryApi } from './randomFilms';
 import createModalCards from '../templates/modalCards.hbs';
 import { onModalClick } from './localStorage';
+import { deleteFilmFromMarkup } from './deleteFilmFromLibrary';
 
 const modal = document.querySelector('.modal');
 
@@ -35,6 +36,11 @@ export const onKeyboardPress = event => {
   if (event.code === 'Escape') {
     modal.closest('.backdrop').classList.add('is-hidden');
   }
+
+  if (location.href === 'http://localhost:1234/library.html') {
+    deleteFilmFromMarkup(event);
+  }
+
   modal.removeEventListener('click', onModalClick);
   document.removeEventListener('keydown', onKeyboardPress);
 };

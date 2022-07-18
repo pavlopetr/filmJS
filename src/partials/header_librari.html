@@ -1,28 +1,40 @@
-<header class="header_library ">
-    <div class="heder__dox container">
-        <include src="./partials/checkBox.html"></include>
-        <div class="logo-box">
-            <a href="./index.html"><span class="icon"><svg class="icon__logo" width="24" height="24">
-                        <use href="./images/srait.svg#icon-film"></use>
-                    </svg>
-                </span></a>
+<header class="header_library">
+  <div class="heder__dox container">
+    <include src="./partials/checkBox.html"></include>
+    <div class="logo-box">
+      <a href="./index.html"
+        ><span class="icon"
+          ><svg class="icon__logo" width="24" height="24">
+            <use href="./images/srait.svg#icon-film"></use>
+          </svg> </span
+      ></a>
 
-            <a class="logo" href="./index.html"> Filmoteka
-            </a>
-        </div>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a class="nav__link" href="./index.html">Home</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link nav-akcent" id="library" href="./library.html">my library</a>
-                </li>
-            </ul>
-        </nav>
+      <a class="logo" href="./index.html"> Filmoteka </a>
     </div>
-    <div class="btn_box">
-        <button class="btn_click  is-open" type="submit" data-watched>Watched</button>
-        <button class="btn_click" type="submit" data-queue>Queue</button>
-    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="./index.html">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav-akcent" id="library" href="./library.html"
+            >my library</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="btn_box">
+    <button
+      class="btn_click is-open"
+      type="submit"
+      data-watched
+      data-action="active"
+    >
+      Watched
+    </button>
+    <button class="btn_click" type="submit" data-queue data-action="not-active">
+      Queue
+    </button>
+  </div>
 </header>
