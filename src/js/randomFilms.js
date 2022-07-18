@@ -7,7 +7,7 @@ import {
 } from './datesForMarkup';
 import { changePerPageOfQuery } from './perPageMediaRule';
 import { onPosterClick } from './modal';
-import { updateDataForLocalStorage } from './storage';
+import { updateDataForLocalStorage } from './localStorage';
 import createFilmCards from '../templates/filmCards.hbs';
 import { formEl, onFormSubmit } from './inputFilms';
 

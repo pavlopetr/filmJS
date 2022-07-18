@@ -2,7 +2,7 @@ import { galleryApi } from './randomFilms';
 import { onPosterClick } from './modal';
 import createLibraryCards from '../templates/libraryCards.hbs';
 import { createAlertFailure } from './alert';
-import { updateDataForLocalStorage } from './storage';
+import { updateDataForLocalStorage } from './localStorage';
 import { changeColorBtnLibraryClick } from './colorButton';
 
 const containerLibraryElement = document.querySelector('.library-film_list');
@@ -50,7 +50,7 @@ function createMarkupLibraryMain() {
   }
 }
 
-function createMarkupWatchLocalStorage() {
+const createMarkupWatchLocalStorage = () => {
   updateDataForLocalStorage();
   containerLibraryElement.innerHTML = '';
 
@@ -66,9 +66,9 @@ function createMarkupWatchLocalStorage() {
       })
       .catch(error => createAlertFailure(error));
   }
-}
+};
 
-function createMarkupQueueLocalStorage() {
+const createMarkupQueueLocalStorage = () => {
   updateDataForLocalStorage();
   containerLibraryElement.innerHTML = '';
 
@@ -84,7 +84,7 @@ function createMarkupQueueLocalStorage() {
       })
       .catch(error => createAlertFailure(error));
   }
-}
+};
 
 function createMarkupForLibrary(data) {
   data.release_date = data.release_date.split('-')[0];

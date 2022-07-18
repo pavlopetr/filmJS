@@ -1,5 +1,5 @@
 'use strict';
-import ls from './localStorage';
+import ls from './storage';
 
 const cneckBoxEl = document.querySelector('[name="ligthswitcher"]');
 const bodyEl = document.querySelector('body');

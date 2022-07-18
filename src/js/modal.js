@@ -1,6 +1,6 @@
 import { galleryApi } from './randomFilms';
 import createModalCards from '../templates/modalCards.hbs';
-import { onModalClick } from './storage';
+import { onModalClick } from './localStorage';
 
 const modal = document.querySelector('.modal');
 
@@ -30,6 +30,8 @@ export const onPosterClick = event => {
 };
 
 function onKeyboardPress(event) {
+  console.log(event.target);
+
   if (event.code === 'Escape') {
     modal.closest('.backdrop').classList.add('is-hidden');
   }
