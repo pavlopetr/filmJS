@@ -1,3 +1,4 @@
+import './lightSwitch';
 import ls from './storage';
 import { galleryApi } from './randomFilms';
 import { onPosterClick } from './modal';
