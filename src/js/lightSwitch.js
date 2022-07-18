@@ -12,9 +12,9 @@ if (switherMode === 'off') {
   bodyEl.classList.add('night');
   footerEl.classList.add('night');
 
-  for (let i = 0; i < tittleEls.length; i += 1) {
-    tittleEls[i] = tittleEls[i].classList.add('nigthText');
-  }
+  // for (let i = 0; i < tittleEls.length; i += 1) {
+  //   tittleEls[i] = tittleEls[i].classList.add('nigthText');
+  // }
   // for (let el of tittleEls) {
   //   // el = el.style.color = 'white';
   //   el = el.classList.add('nigthText');

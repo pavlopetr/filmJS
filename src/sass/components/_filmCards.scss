@@ -29,9 +29,13 @@
   //   line-height: 1.33;
   //   text-transform: uppercase;
 }
-// .film-tittle {
-//   color: #000000;
-// }
+.film-tittle {
+  color: #000000;
+
+  body.night & {
+    color: #fff;
+  }
+}
 .film-genre {
   color: #ff6b08;
 }
