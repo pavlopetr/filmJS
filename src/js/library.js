@@ -9,7 +9,7 @@ const containerLibraryElement = document.querySelector('.library-film_list');
 const buttonWatchEl = document.querySelector('button[data-watched]');
 const buttonQueueEl = document.querySelector('button[data-queue]');
 
-// if (document.location.href === 'http://localhost:56790/library.html') {
+// if (document.location.href === 'http://localhost:1234/library.html') {
 //   createMarkupLibraryMain();
 // }
 
@@ -17,7 +17,7 @@ if (
   document.location.href ===
   'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
 ) {
-  createMarkupWatchLocalStorage();
+  createMarkupLibraryMain();
 }
 
 function onButtonWatchEl(event) {
@@ -50,7 +50,7 @@ function createMarkupLibraryMain() {
   }
 }
 
-function createMarkupWatchLocalStorage() {
+const createMarkupWatchLocalStorage = () => {
   updateDataForLocalStorage();
   containerLibraryElement.innerHTML = '';
 
@@ -66,14 +66,14 @@ function createMarkupWatchLocalStorage() {
       })
       .catch(error => createAlertFailure(error));
   }
-}
+};
 
-function createMarkupQueueLocalStorage() {
+const createMarkupQueueLocalStorage = () => {
   updateDataForLocalStorage();
   containerLibraryElement.innerHTML = '';
 
   if (galleryApi.queueArr.length === 0) {
-    createAlertFailure("You don't have watched films in your library");
+    createAlertFailure("You don't have films in queue in your library");
     return;
   }
   for (let i of galleryApi.queueArr) {
@@ -84,7 +84,7 @@ function createMarkupQueueLocalStorage() {
       })
       .catch(error => createAlertFailure(error));
   }
-}
+};
 
 function createMarkupForLibrary(data) {
   data.release_date = data.release_date.split('-')[0];

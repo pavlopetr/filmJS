@@ -30,6 +30,8 @@ export const onPosterClick = event => {
 };
 
 function onKeyboardPress(event) {
+  console.log(location);
+
   if (event.code === 'Escape') {
     modal.closest('.backdrop').classList.add('is-hidden');
   }

@@ -14,7 +14,7 @@ export class GalleryApi {
     this.queueArr = [];
   }
 
-  fetchMovies() {
+  fetchSearchMovies() {
     axios.defaults.params = {
       api_key: this.#API_KEY,
       query: this.query,
@@ -25,10 +25,11 @@ export class GalleryApi {
     return axios(`3/search/movie`).then(response => response.data);
   }
 
-  fetchRandomMovies() {
+  fetchTrendingMovies() {
     axios.defaults.params = {
       api_key: this.#API_KEY,
       per_page: this.perPage,
+      page: this.page,
     };
 
     return axios(`3/trending/movie/day`).then(response => response.data);

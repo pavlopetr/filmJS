@@ -3,7 +3,7 @@ import {
   changeIdOfGenreToName,
   changeDateInArrayOfResults,
 } from './datesForMarkup';
-import { changePerPageOfQuery } from './mediaPerPage';
+import { changePerPageOfQuery } from './perPageMediaRule';
 import { createAlertFailure } from './alert';
 import { onPosterClick } from './modal';
 import createFilmCards from '../templates/filmCards.hbs';
@@ -26,7 +26,7 @@ export const onFormSubmit = event => {
   }
 
   galleryApi
-    .fetchMovies()
+    .fetchSearchMovies()
     .then(data => {
       if (data.results.length === 0) {
         createRandomMarkup();

@@ -5,7 +5,7 @@ import {
   changeDateInArrayOfResults,
   createArrayOfGenres,
 } from './datesForMarkup';
-import { changePerPageOfQuery } from './mediaPerPage';
+import { changePerPageOfQuery } from './perPageMediaRule';
 import { onPosterClick } from './modal';
 import { updateDataForLocalStorage } from './localStorage';
 import createFilmCards from '../templates/filmCards.hbs';
@@ -19,7 +19,7 @@ updateDataForLocalStorage();
 
 export const createRandomMarkup = () => {
   galleryApi
-    .fetchRandomMovies()
+    .fetchTrendingMovies()
     .then(data => {
       changePerPageOfQuery();
 
@@ -33,4 +33,13 @@ export const createRandomMarkup = () => {
     .catch(error => createAlertFailure(error));
 };
 
-createRandomMarkup();
+// if (document.location.href === 'http://localhost:1234/index.html') {
+//   createRandomMarkup();
+// }
+
+if (
+  document.location.href ===
+  'https://mykhailotsynkevych.github.io/Filmoteka/index.html'
+) {
+  createRandomMarkup();
+}

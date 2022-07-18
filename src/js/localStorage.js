@@ -47,6 +47,8 @@ export const onModalClick = event => {
 
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
+      event.currentTarget.removeEventListener('click', onModalClick);
+      document.removeEventListener('keydown', onKeyboardPress);
 
     default:
       console.log('Error in value of button');
