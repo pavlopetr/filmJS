@@ -1,4 +1,4 @@
-import { galleryApi } from './randomFilms';
+import { galleryApi } from './fetchTrendingFilms';
 import { onPosterClick } from './modal';
 import createLibraryCards from '../templates/libraryCards.hbs';
 import { createAlertFailure } from './alert';
@@ -9,7 +9,7 @@ const containerLibraryElement = document.querySelector('.library-film_list');
 const buttonWatchEl = document.querySelector('button[data-watched]');
 const buttonQueueEl = document.querySelector('button[data-queue]');
 
-if (document.location.href === 'http://localhost:1234/library.html') {
+if (document.location.href === 'http://localhost:64699/library.html') {
   createMarkupLibraryMain();
 }
 
@@ -73,7 +73,7 @@ function createMarkupQueueLocalStorage() {
   containerLibraryElement.innerHTML = '';
 
   if (galleryApi.queueArr.length === 0) {
-    createAlertFailure("You don't have watched films in your library");
+    createAlertFailure("You don't have films in queue in your library");
     return;
   }
   for (let i of galleryApi.queueArr) {

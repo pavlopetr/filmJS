@@ -1,5 +1,5 @@
-import ls from './storage';
-import { galleryApi } from './randomFilms';
+import ls from './itemsLocalStorage';
+import { galleryApi } from './fetchTrendingFilms';
 import { changeColorBtnHomeClick } from './colorButton';
 
 export const onModalClick = event => {

@@ -1,4 +1,4 @@
-import { galleryApi } from './randomFilms';
+import { galleryApi } from './fetchTrendingFilms';
 import createModalCards from '../templates/modalCards.hbs';
 import { onModalClick } from './localStorage';
 
