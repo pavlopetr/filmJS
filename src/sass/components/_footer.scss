@@ -2,11 +2,12 @@ p {
   padding: 0;
   margin: 0;
 }
-// .foot {
-//   position: absolute;
-//   bottom: 0;
-//   width: 100%;
-// }
+.foot {
+  body.night & {
+    color: #fff;
+    background-color: #141414;
+  }
+}
 
 .footer {
   margin-left: auto;
@@ -14,6 +15,9 @@ p {
   padding-top: 0;
   padding-bottom: 0;
   color: var(--footerTextColor);
+  body.night & {
+    color: #fff;
+  }
 
   .footer__image {
     padding-left: 10px;
