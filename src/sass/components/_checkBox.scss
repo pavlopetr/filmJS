@@ -86,3 +86,10 @@ input:checked[type='checkbox']:after {
 .nightText {
   color: white;
 }
+.library_alert {
+  body.night & {
+    color: #fff;
+    background-color: #141414;
+    margin-bottom: 80vh;
+  }
+}
