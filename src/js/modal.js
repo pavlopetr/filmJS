@@ -29,7 +29,7 @@ export const onPosterClick = event => {
     .catch(error => createAlertFailure(error));
 };
 
-function onKeyboardPress(event) {
+export const onKeyboardPress = event => {
   console.log(location);
 
   if (event.code === 'Escape') {
@@ -37,4 +37,4 @@ function onKeyboardPress(event) {
   }
   modal.removeEventListener('click', onModalClick);
   document.removeEventListener('keydown', onKeyboardPress);
-}
+};

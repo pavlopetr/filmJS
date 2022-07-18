@@ -1,6 +1,7 @@
 import ls from './storage';
 import { galleryApi } from './randomFilms';
 import { changeColorBtnHomeClick } from './colorButton';
+import { onKeyboardPress } from './modal';
 
 export const onModalClick = event => {
   if (event.target.nodeName !== 'BUTTON') {
@@ -49,6 +50,7 @@ export const onModalClick = event => {
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
       event.currentTarget.removeEventListener('click', onModalClick);
       document.removeEventListener('keydown', onKeyboardPress);
+      break;
 
     default:
       console.log('Error in value of button');
