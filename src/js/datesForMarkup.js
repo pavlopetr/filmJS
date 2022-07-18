@@ -1,4 +1,4 @@
-import { galleryApi } from './fetchTrendingFilms';
+import { galleryApi } from './randomFilms';
 
 export const createArrayOfGenres = () => {
   galleryApi.fetchGenres().then(data => {

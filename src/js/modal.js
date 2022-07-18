@@ -1,6 +1,6 @@
-import { galleryApi } from './fetchTrendingFilms';
+import { galleryApi } from './randomFilms';
 import createModalCards from '../templates/modalCards.hbs';
-import { onModalClick } from './localStorage';
+import { onModalClick } from './storage';
 
 const modal = document.querySelector('.modal');
 

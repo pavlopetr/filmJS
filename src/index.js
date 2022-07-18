@@ -1,4 +1,4 @@
-import './js/fetchTrendingFilms';
+import './js/randomFilms';
 import './js/library.js';
-import './js/searchFilms';
+import './js/inputFilms';
 import './js/lightSwitch';

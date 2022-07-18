@@ -1,15 +1,15 @@
-import { galleryApi } from './fetchTrendingFilms';
+import { galleryApi } from './randomFilms';
 import { onPosterClick } from './modal';
 import createLibraryCards from '../templates/libraryCards.hbs';
 import { createAlertFailure } from './alert';
-import { updateDataForLocalStorage } from './localStorage';
+import { updateDataForLocalStorage } from './storage';
 import { changeColorBtnLibraryClick } from './colorButton';
 
 const containerLibraryElement = document.querySelector('.library-film_list');
 const buttonWatchEl = document.querySelector('button[data-watched]');
 const buttonQueueEl = document.querySelector('button[data-queue]');
 
-if (document.location.href === 'http://localhost:64699/library.html') {
+if (document.location.href === 'http://localhost:1234/library.html') {
   createMarkupLibraryMain();
 }
 

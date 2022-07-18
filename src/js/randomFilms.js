@@ -4,12 +4,12 @@ import {
   changeIdOfGenreToName,
   changeDateInArrayOfResults,
   createArrayOfGenres,
-} from './dataForMarkup';
+} from './datesForMarkup';
 import { changePerPageOfQuery } from './perPageMediaRule';
 import { onPosterClick } from './modal';
-import { updateDataForLocalStorage } from './localStorage';
+import { updateDataForLocalStorage } from './storage';
 import createFilmCards from '../templates/filmCards.hbs';
-import { formEl, onFormSubmit } from './searchFilms';
+import { formEl, onFormSubmit } from './inputFilms';
 
 export const containerEl = document.querySelector('.cards-film_list');
 
@@ -33,7 +33,7 @@ export const createRandomMarkup = () => {
     .catch(error => createAlertFailure(error));
 };
 
-if (document.location.href === 'http://localhost:64699/index.html') {
+if (document.location.href === 'http://localhost:1234/index.html') {
   createRandomMarkup();
 }
 

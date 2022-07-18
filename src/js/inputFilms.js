@@ -1,12 +1,8 @@
-import {
-  galleryApi,
-  containerEl,
-  createRandomMarkup,
-} from './fetchTrendingFilms';
+import { galleryApi, containerEl, createRandomMarkup } from './randomFilms';
 import {
   changeIdOfGenreToName,
   changeDateInArrayOfResults,
-} from './dataForMarkup';
+} from './datesForMarkup';
 import { changePerPageOfQuery } from './perPageMediaRule';
 import { createAlertFailure } from './alert';
 import { onPosterClick } from './modal';

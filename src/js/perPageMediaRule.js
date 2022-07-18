@@ -1,4 +1,4 @@
-import { galleryApi } from './fetchTrendingFilms';
+import { galleryApi } from './randomFilms';
 
 export const changePerPageOfQuery = () => {
   const mediaScreen = document.documentElement.clientWidth;
