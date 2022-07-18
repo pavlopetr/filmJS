@@ -8,7 +8,6 @@ import { createAlertFailure } from './alert';
 import createFilmCards from '../templates/filmCards.hbs';
 
 const formEl = document.querySelector('#search-form');
-formEl.addEventListener('submit', onFormSubmit);
 
 export const onFormSubmit = event => {
   event.preventDefault();
@@ -35,3 +34,5 @@ export const onFormSubmit = event => {
     })
     .catch(error => createAlertFailure(error));
 };
+
+formEl.addEventListener('submit', onFormSubmit);
