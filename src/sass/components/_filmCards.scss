@@ -1,22 +1,40 @@
 .cards-film_list,
 .library-film_list {
+  margin-top: 20px;
   width: 100%;
-  display: flex;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   @media screen and (min-width: 768px) {
-    --card-item: 2;
+    margin-top: 60px;
   }
   @media screen and (min-width: 1280px) {
-    --card-item: 3;
   }
 }
 
 .film-card {
-  //   margin-top: 20px;
-  border-radius: 5px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+  @media screen and (min-width: 1280px) {
+  }
 }
 .film-image {
-  display: block;
-  width: 100%;
+  width: 280px;
+  height: 402px;
+  border-radius: 6px;
+  object-fit: cover;
+  @media screen and (min-width: 768px) {
+    object-fit: fill;
+    width: 336px;
+    height: 455px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 574px;
+  }
 }
 .info {
   //   padding-top: 12px;
@@ -29,17 +47,34 @@
   //   line-height: 1.33;
   //   text-transform: uppercase;
 }
-.film-tittle {
-  color: #000000;
 
-  body.night & {
+  @media screen and (min-width: 768px) {
+    max-width: 336px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.2;
+    max-width: 395px;
+  }
+}
+.film-tittle {
+  text-transform: uppercase;
+  color: #000000;
+  
+    body.night & {
     color: #fff;
   }
 }
+
 .film-genre {
   color: #ff6b08;
 }
 .film-year {
 }
 .film-raiting {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 }
