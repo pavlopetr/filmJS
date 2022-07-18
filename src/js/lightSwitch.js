@@ -11,13 +11,11 @@ if (switherMode === 'off') {
   cneckBoxEl.checked = true;
   bodyEl.classList.add('night');
   footerEl.classList.add('night');
-}
-
-for (let el of tittleEls) {
-  if (switherMode === 'off') {
+  for (let el of tittleEls) {
     el = el.classList.add('nigthText');
   }
 }
+
 cneckBoxEl.addEventListener('change', nigthlight);
 
 function nigthlight() {
