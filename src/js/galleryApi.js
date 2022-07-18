@@ -12,6 +12,7 @@ export class GalleryApi {
     this.arrayOfGenres = null;
     this.watchArr = [];
     this.queueArr = [];
+    this.id = null;
   }
 
   fetchSearchMovies() {
