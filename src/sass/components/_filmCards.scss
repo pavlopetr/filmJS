@@ -46,7 +46,6 @@
   //   font-size: 12px;
   //   line-height: 1.33;
   //   text-transform: uppercase;
-}
 
   @media screen and (min-width: 768px) {
     max-width: 336px;
@@ -60,8 +59,8 @@
 .film-tittle {
   text-transform: uppercase;
   color: #000000;
-  
-    body.night & {
+
+  body.night & {
     color: #fff;
   }
 }
