@@ -12,7 +12,7 @@ const markup = `<div class="team-wrapper">
 <div class="team-card">
     <img src="${mishaUrl}" alt="Misha" class="team-image">
     <p class="team-name">Misha</p>
-    <p class="team-role">Team Lead</p>
+    <p class="team-role">mini Team Lead</p>
 </div>
 <div class="team-card">
     <img src="${romanUrl}" alt="Roman" class="team-image">
@@ -22,12 +22,12 @@ const markup = `<div class="team-wrapper">
 <div class="team-card">
     <img src="${sergeyUrl}" alt="Sergey" class="team-image">
     <p class="team-name">Sergey</p>
-    <p class="team-role">Developer</p>
+    <p class="team-role">Middle Developer</p>
 </div>
 <div class="team-card">
     <img src="${annaUrl}" alt="Anna" class="team-image">
     <p class="team-name">Anna</p>
-    <p class="team-role">Developer</p>
+    <p class="team-role">Senior Developer</p>
 </div>
 <div class="team-card">
     <img src="${pashaUrl}" alt="Pavlo" class="team-image">

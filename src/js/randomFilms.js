@@ -29,3 +29,15 @@ export const createRandomMarkup = () => {
     })
     .catch(error => console.log(error));
 };
+
+
+// // if (document.location.href === 'http://localhost:1234/index.html') {
+// //   createRandomMarkup();
+// // }
+
+// if (
+//   document.location.href ===
+//   'https://mykhailotsynkevych.github.io/Filmoteka/index.html'
+// ) {
+//   createRandomMarkup();
+// }
