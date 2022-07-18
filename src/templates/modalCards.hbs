@@ -12,11 +12,14 @@ src='https://png.pngtree.com/png-clipart/20211121/original/pngtree-not-found-sta
   
 />
 <div class="modal__info">
+  
 <h2 class="modal__tatel" >{{this.original_title}}</h2>
-<p class="modal__label">Vote / Votes <span class="votes-box"> <span class="modal__vote">{{vote_average}}</span>  / <span class="modal__votes"> {{vote_count}}</span> </span></p>
-<p class="modal__label">Popularity <span class="modal__populars">{{this.popularity}}</span> </p>
-<p class="modal__label">Original title <span class="origenal__tatel">{{this.original_title}}</span> </p>
-<p class="modal__label">Genre <span class="modal__genre" >{{#each this.genres}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}</span></p>
+<ul>
+  <li class="info-items"><p class="modal__label">Vote / Votes </p> <p class="votes-box"><span class="modal__vote">{{vote_average}}</span>  / <span class="modal__votes"> {{vote_count}}</span></p></li>
+   <li class="info-items"> <p class="modal__label">Popularity </p> <p class="modal__populars">{{this.popularity}}</p></li>
+    <li class="info-items"> <p class="modal__label">Original title </p><p class="origenal__tatel">{{this.original_title}}</p></li>
+     <li class="info-items"> <p class="modal__label">Genre</p><p class="modal__genre">{{#each this.genres}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}</p></li>
+</ul>
 <h3 class="about">About</h3>
 <p class="about_text"> {{this.overview}}</p>
 <div class="btn__modal"><button class="btn__add btn__add-click js-watch" type='button' data-action="watched" data-id="{{this.id}}">Add to watched</button>
