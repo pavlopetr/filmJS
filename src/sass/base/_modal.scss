@@ -59,44 +59,24 @@
   right: 8px;
   top: 8px;
 
-  border-radius: 50%;
+
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   box-sizing: border-box;
   z-index: 3;
   cursor: pointer;
+  background-image: url(../images/close-bla1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.icon-cose {
-  display: flex;
-  width: 11px;
-  height: 11px;
-  // transition: fill var(--transition);
 
-  &:hover .icon-cose,
-  &:focus .icon-cose {
-    fill: var(--accent-color);
-  }
-}
 
-.svg {
-  width: 12px;
-  height: 12px;
-}
 
-.modal-clouse-btn {
-  position: absolute;
-  top: 8px;
-  left: 242px;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-}
 
-.icon__close {
-  display: block;
-  fill: #000000;
-}
+
+
+
 
 // --------------
 
@@ -239,8 +219,7 @@
 }
 
 .btn__add:not(:last-child) {
-  @media screen and (min-width: 1280px) {
-  }
+  @media screen and (min-width: 1280px) {}
 
   margin-right: 15px;
 }
