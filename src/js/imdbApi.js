@@ -1,4 +1,5 @@
 import axios, { Axios } from 'axios';
+import Notiflix from 'notiflix';
 
 export class ImdbApi {
   BASE_URL = 'https://imdb-api.com/en/API';
@@ -14,9 +15,10 @@ export class ImdbApi {
         `${this.BASE_URL}/${this.QS}/${this.#API_KEY}/${this.query}`
       );
       const trailerId = response.data.results[0].id;
-      this.fetchTrailer(trailerId);
+      const trailerUrlId = await this.fetchTrailer(trailerId);
+      return trailerUrlId;
     } catch (error) {
-      console.log('error serch');
+      Notiflix.Notify.info('serch error ');
     }
   };
 
@@ -26,10 +28,10 @@ export class ImdbApi {
         `${this.BASE_URL}/${this.TFR}/${this.#API_KEY}/${trailerId}`
       );
       const trailerUrlId = response.data.videoId;
-      console.log('Trailer ID :>> ', trailerUrlId);
+      // console.log('Trailer ID :>> ', trailerUrlId);
       return trailerUrlId;
     } catch (error) {
-      console.log('error Trailer');
+      Notiflix.Notify.failure('error Trailer');
     }
   };
 }

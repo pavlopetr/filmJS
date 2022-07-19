@@ -10,6 +10,7 @@ export const onModalClick = event => {
   }
   const btnWatchModalEl = event.currentTarget.querySelector('.js-watch');
   const btnQueueModalEl = event.currentTarget.querySelector('.js-queue');
+  const backStageEl = document.querySelector('.backstage');
   const filmID = event.target.dataset.id;
 
   switch (event.target.dataset.action) {
@@ -46,7 +47,8 @@ export const onModalClick = event => {
       event.target.textContent = 'add to queue';
       changeColorBtnHomeClick(event, btnWatchModalEl);
       break;
-
+    case 'YouTube':
+      backStageEl.classList.remove('is-hidden');
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
 
