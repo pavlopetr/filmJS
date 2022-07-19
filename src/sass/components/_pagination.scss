@@ -1,0 +1,55 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  margin-right: 6px;
+  cursor: pointer;
+}
+.page-btn.last-child {
+  margin-right: 0;
+}
+
+.is-selected {
+  background-color: #ff6b08;
+  color: #ffffff;
+}
+
+.move-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.move-btn-next {
+  background-color: transparent;
+  background-image: url(../images/pagination/arrow_right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.move-btn-prev {
+  background-color: transparent;
+  background-image: url(../images/pagination/arrow_left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.move-btn-first,
+.move-btn-last {
+  display: none;
+}
