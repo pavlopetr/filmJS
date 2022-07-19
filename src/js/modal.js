@@ -33,7 +33,11 @@ export const onPosterClick = event => {
     })
     .then(titleQuery => {
       imdbApi.query = titleQuery;
-      imdbApi.fetchSerchByName();
+      return imdbApi.fetchSerchByName();
+    })
+    .then(id => {
+      const iframeEl = document.querySelector('.youTubeTrailer');
+      iframeEl.src = `https://www.youtube.com/embed/${id}`;
     })
     .catch(error => createAlertFailure(error));
 };
