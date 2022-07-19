@@ -27,6 +27,10 @@ export const onPosterClick = event => {
       modal.addEventListener('click', onModalClick);
       document.addEventListener('keydown', onKeyboardPress);
     })
+    .then(titleQuery => {
+      imdbApi.query = titleQuery;
+      imdbApi.fetchSerchByName();
+    })
     .catch(error => createAlertFailure(error));
 };
 
