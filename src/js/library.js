@@ -1,6 +1,7 @@
 import './lightSwitch';
 import './teamLightbox';
 import ls from './storage';
+import Pagination from 'tui-pagination';
 import { galleryApi } from './randomFilms';
 import { onPosterClick } from './modal';
 import createLibraryCards from '../templates/libraryCards.hbs';
@@ -15,7 +16,44 @@ const alertInfo = document.querySelector('.library_alert');
 buttonWatchEl.addEventListener('click', onButtonWatchEl);
 buttonQueueEl.addEventListener('click', onButtonQueueEl);
 
-createMarkupWatchLocalStorage();
+if (window.innerWidth < 768) cardsQuantity = 4;
+else if (window.innerWidth < 1200) cardsQuantity = 8;
+else cardsQuantity = 9;
+export default cardsQuantity;
+
+const containerPagination = document.querySelector('.pagination');
+const paginationLibraryWatch = new Pagination(containerPagination, {
+  itemsPerPage: cardsQuantity,
+  visiblePages: 5,
+  centerAlign: true,
+  firstItemClassName: 1,
+  template: {
+    currentPage: '<a class="page-btn is-selected">{{page}}</a>',
+    page: '<a class="page-btn">{{page}}</a>',
+    moveButton: `<button class="move-btn move-btn-{{type}}"></button>`,
+    disabledMoveButton:
+      '<button class="move-btn move-btn-{{type}} disabled" disabled></button>',
+    moreButton: '<a class="page-btn next-is-ellip last-child">...</a>',
+  },
+});
+
+const paginationLibraryQueue = new Pagination(containerPagination, {
+  itemsPerPage: cardsQuantity,
+  visiblePages: 5,
+  centerAlign: true,
+  firstItemClassName: 1,
+  template: {
+    currentPage: '<a class="page-btn is-selected">{{page}}</a>',
+    page: '<a class="page-btn">{{page}}</a>',
+    moveButton: `<button class="move-btn move-btn-{{type}}"></button>`,
+    disabledMoveButton:
+      '<button class="move-btn move-btn-{{type}} disabled" disabled></button>',
+    moreButton: '<a class="page-btn next-is-ellip last-child">...</a>',
+  },
+});
+
+document.onload = updateDataForLocalStorage();
+document.onload = createMarkupWatchLocalStorage();
 
 function onButtonWatchEl(event) {
   changeColorBtnLibraryClick(event, buttonQueueEl);
@@ -28,8 +66,8 @@ function onButtonQueueEl(event) {
 }
 
 function createMarkupWatchLocalStorage() {
-  updateDataForLocalStorage();
   containerLibraryElement.innerHTML = '';
+  alertInfo.innerHTML = '';
 
   const arrayWatch = ls.load(`toWatch`);
 
@@ -37,19 +75,16 @@ function createMarkupWatchLocalStorage() {
     alertInfo.innerHTML = "You don't have watched films in your library";
     return;
   }
-  for (let i of arrayWatch) {
-    galleryApi
-      .fetchMovieById(i)
-      .then(data => {
-        createMarkupForLibrary(data);
-      })
-      .catch(error => console.log(error));
-  }
+
+  const arrayForRenderFirstPage = arrayWatch.slice(0, cardsQuantity);
+  renderLibraryMarkup(arrayForRenderFirstPage);
+
+  paginationLibraryWatch.reset(arrayWatch.length);
 }
 
 function createMarkupQueueLocalStorage() {
-  updateDataForLocalStorage();
   containerLibraryElement.innerHTML = '';
+  alertInfo.innerHTML = '';
 
   const arrayQueue = ls.load(`queue`);
 
@@ -57,18 +92,46 @@ function createMarkupQueueLocalStorage() {
     alertInfo.innerHTML = "You don't have films in queue in your library";
     return;
   }
-  for (let i of arrayQueue) {
-    galleryApi
-      .fetchMovieById(i)
-      .then(data => {
-        createMarkupForLibrary(data);
-      })
-      .catch(error => console.log(error));
-  }
+
+  const arrayForRenderFirstPage = arrayQueue.slice(0, cardsQuantity);
+  renderLibraryMarkup(arrayForRenderFirstPage);
+
+  paginationLibraryQueue.reset(arrayQueue.length);
 }
 
-function createMarkupForLibrary(data) {
-  data.release_date = data.release_date.split('-')[0];
-  const markup = createLibraryCards(data);
-  containerLibraryElement.insertAdjacentHTML('beforeend', markup);
+paginationLibraryWatch.on('afterMove', event => {
+  const currentPage = event.page;
+  alertInfo.innerHTML = '';
+  const arrayWatch = ls.load(`toWatch`);
+  const arrayForRenderCurrentPage = arrayWatch.slice(
+    (currentPage - 1) * cardsQuantity,
+    currentPage * cardsQuantity
+  );
+  renderLibraryMarkup(arrayForRenderCurrentPage);
+});
+
+paginationLibraryQueue.on('afterMove', event => {
+  const currentPage = event.page;
+  alertInfo.innerHTML = '';
+  const arrayQueue = ls.load(`queue`);
+  const arrayForRenderCurrentPage = arrayQueue.slice(
+    (currentPage - 1) * cardsQuantity,
+    currentPage * cardsQuantity
+  );
+  renderLibraryMarkup(arrayForRenderCurrentPage);
+});
+
+function renderLibraryMarkup(array) {
+  let markup = '';
+  array.forEach(el => {
+    galleryApi
+      .fetchMovieById(el)
+      .then(data => {
+        data.release_date = data.release_date.split('-')[0];
+        markup += createLibraryCards(data);
+        return markup;
+      })
+      .then(data => (containerLibraryElement.innerHTML = data))
+      .catch(error => console.log(error));
+  });
 }
