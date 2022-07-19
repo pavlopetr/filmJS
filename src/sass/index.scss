@@ -4,9 +4,13 @@
 @import './layout/header';
 @import './layout/header_library';
 @import './components/checkBox';
-@import './components/filmCards';
-@import './components/footer';
+@import './layout/filmCards';
+@import './layout/footer';
 @import './base/modal';
 @import './components/team-modal';
 @import './layout/library';
+<<<<<<< Updated upstream
+@import './layout/pagination';
+=======
 @import './components/pagination.scss';
+>>>>>>> Stashed changes
