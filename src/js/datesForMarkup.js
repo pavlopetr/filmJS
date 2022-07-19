@@ -1,9 +1,14 @@
 import { galleryApi } from './randomFilms';
 
 export const createArrayOfGenres = () => {
+  let newObject = {};
   galleryApi.fetchGenres().then(data => {
     galleryApi.arrayOfGenres = data;
+    data.forEach(el => {
+      newObject[el.id] = el.name;
+    });
   });
+  galleryApi.objectOfGenres = newObject;
 };
 
 export const changeIdOfGenreToName = arrayOfResults => {
@@ -11,8 +16,7 @@ export const changeIdOfGenreToName = arrayOfResults => {
 
   for (let i = 0; i < arrayIdOfGenres.length; i++) {
     arrayIdOfGenres[i].forEach((el, index, array) => {
-      const object = galleryApi.arrayOfGenres.find(genre => genre.id === el);
-      array[index] = object.name;
+      array[index] = galleryApi.objectOfGenres[el];
     });
   }
   arrayOfResults.map((el, index) => (el.genre_ids = arrayIdOfGenres[index]));
