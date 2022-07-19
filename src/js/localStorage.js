@@ -49,6 +49,7 @@ export const onModalClick = event => {
       break;
     case 'YouTube':
       backStageEl.classList.remove('is-hidden');
+      break;
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
 
