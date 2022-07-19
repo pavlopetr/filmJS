@@ -26,7 +26,7 @@ export class ImdbApi {
         `${this.BASE_URL}/${this.TFR}/${this.#API_KEY}/${trailerId}`
       );
       const trailerUrlId = response.data.videoId;
-
+      console.log('Trailer ID :>> ', trailerUrlId);
       return trailerUrlId;
     } catch (error) {
       console.log('error Trailer');
