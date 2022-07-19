@@ -39,7 +39,6 @@ export const onModalClick = event => {
       break;
 
     case 'remove queue':
-      console.log(filmID);
       const indexQueue = galleryApi.queueArr.indexOf(filmID);
       galleryApi.queueArr.splice(indexQueue, 1);
       ls.save('queue', galleryApi.queueArr);
@@ -51,15 +50,15 @@ export const onModalClick = event => {
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
 
-      if (location.href === 'http://localhost:58261/library.html') {
-        deleteFilmFromMarkup(event);
-      }
-      // if (
-      //   location.href ===
-      //   'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
-      // ) {
+      // if (location.href === 'http://localhost:58261/library.html') {
       //   deleteFilmFromMarkup(event);
       // }
+      if (
+        location.href ===
+        'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
+      ) {
+        deleteFilmFromMarkup(event);
+      }
 
       document.removeEventListener('keydown', onKeyboardPress);
       break;

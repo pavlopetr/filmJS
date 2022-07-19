@@ -10,6 +10,12 @@ export const deleteFilmFromMarkup = event => {
       `li[data-id = '${idForDelete}']`
     );
     filmForDelete.remove();
+    const allFilms = document.querySelectorAll('li[data-action]');
+    if (allFilms.length === 0) {
+      document.querySelector('.library_alert').innerHTML =
+        "You don't have watched films in your library";
+    }
+    return;
   }
   if (
     queueBtn.dataset.action === 'active' &&
@@ -20,5 +26,11 @@ export const deleteFilmFromMarkup = event => {
       `li[data-id = '${idForDelete}']`
     );
     filmForDelete.remove();
+    const allFilms = document.querySelectorAll('li[data-action]');
+    if (allFilms.length === 0) {
+      document.querySelector('.library_alert').innerHTML =
+        "You don't have films in queue in your library";
+    }
+    return;
   }
 };
