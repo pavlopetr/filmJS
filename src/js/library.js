@@ -91,7 +91,7 @@ function createMarkupQueueLocalStorage() {
 
   if (!arrayQueue || arrayQueue.length === 0) {
     alertInfo.innerHTML = "You don't have films in queue in your library";
-    paginationLibraryWatch.reset(0);
+    paginationLibraryQueue.reset(0);
     return;
   }
 
