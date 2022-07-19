@@ -16,6 +16,7 @@ const alertInfo = document.querySelector('.library_alert');
 buttonWatchEl.addEventListener('click', onButtonWatchEl);
 buttonQueueEl.addEventListener('click', onButtonQueueEl);
 
+let cardsQuantity;
 if (window.innerWidth < 768) cardsQuantity = 4;
 else if (window.innerWidth < 1200) cardsQuantity = 8;
 else cardsQuantity = 9;
