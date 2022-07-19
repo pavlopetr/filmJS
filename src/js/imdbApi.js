@@ -1,4 +1,5 @@
 import axios, { Axios } from 'axios';
+import Notiflix from 'notiflix';
 
 export class ImdbApi {
   BASE_URL = 'https://imdb-api.com/en/API';
@@ -16,7 +17,7 @@ export class ImdbApi {
       const trailerId = response.data.results[0].id;
       this.fetchTrailer(trailerId);
     } catch (error) {
-      console.log('error serch');
+      Notiflix.Notify.info('serch error ');
     }
   };
 
@@ -29,7 +30,7 @@ export class ImdbApi {
       console.log('Trailer ID :>> ', trailerUrlId);
       return trailerUrlId;
     } catch (error) {
-      console.log('error Trailer');
+      Notiflix.Notify.failure('error Trailer');
     }
   };
 }
