@@ -17,7 +17,7 @@
 }
 .iframe_container {
   position: absolute;
-  top: 30%;
+  top: 25%;
 
   margin: 0 auto;
   // margin: 0 auto;
@@ -36,8 +36,10 @@
   height: 315px;
   @media screen and (min-width: 768px) {
     width: 704px;
+    height: 552px;
   }
   @media screen and (min-width: 1280px) {
     width: 806px;
+    height: 460px;
   }
 }
