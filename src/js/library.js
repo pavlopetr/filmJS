@@ -11,6 +11,7 @@ const containerLibraryElement = document.querySelector('.library-film_list');
 const buttonWatchEl = document.querySelector('button[data-watched]');
 const buttonQueueEl = document.querySelector('button[data-queue]');
 containerLibraryElement.addEventListener('click', onPosterClick);
+const alertInfo = document.querySelector('.library_alert');
 buttonWatchEl.addEventListener('click', onButtonWatchEl);
 buttonQueueEl.addEventListener('click', onButtonQueueEl);
 
@@ -33,10 +34,7 @@ function createMarkupWatchLocalStorage() {
   const arrayWatch = ls.load(`toWatch`);
 
   if (!arrayWatch || arrayWatch.length === 0) {
-    const alertInfo = document.createElement('p');
-    alertInfo.classList.add('library_alert');
-    alertInfo.textContent = "You don't have watched films in your library";
-    containerLibraryElement.append(alertInfo);
+    alertInfo.innerHTML = "You don't have watched films in your library";
     return;
   }
   for (let i of arrayWatch) {
@@ -56,10 +54,7 @@ function createMarkupQueueLocalStorage() {
   const arrayQueue = ls.load(`queue`);
 
   if (!arrayQueue || arrayQueue.length === 0) {
-    const alertInfo = document.createElement('p');
-    alertInfo.classList.add('library_alert');
-    alertInfo.textContent = "You don't have films in queue in your library";
-    containerLibraryElement.append(alertInfo);
+    alertInfo.innerHTML = "You don't have films in queue in your library";
     return;
   }
   for (let i of arrayQueue) {
