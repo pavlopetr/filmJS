@@ -77,3 +77,19 @@
   font-size: 12px;
   line-height: 1.33;
 }
+
+.library-film_list li,
+.cards-film_list li {
+  // border: solid 1px #ff6b08;
+  transform: scale(1);
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px #ff6b08;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
