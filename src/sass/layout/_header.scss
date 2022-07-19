@@ -41,12 +41,14 @@
   display: flex;
   align-items: center;
   text-align: center;
-  margin-top: 40px;
+
   color: var(--secondaryTextColor);
   display: none;
+  margin-left: 10px;
 
   @media screen and (min-width: 768px) {
     display: block;
+
   }
 }
 
@@ -56,14 +58,18 @@
 }
 
 .icon {
-  display: block;
-
+  display: flex;
+  align-items: baseline;
   margin-top: 40px;
-
-  @media screen and (min-width: 768px) {
-    margin-right: 10px;
-  }
+  background-color: transparent;
 }
+
+.icon__logo {
+  fill: var(--accent-color);
+
+}
+
+
 
 .heder__dox {
   display: flex;
