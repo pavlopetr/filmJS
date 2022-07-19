@@ -4,11 +4,12 @@
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   @media screen and (min-width: 768px) {
     margin-top: 60px;
   }
   @media screen and (min-width: 1280px) {
+    margin-bottom: 60px;
   }
 }
 
