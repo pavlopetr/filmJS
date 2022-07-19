@@ -1,91 +1,92 @@
-
-
 .basicLightbox {
-    overflow: scroll;
+  overflow: scroll;
+}
+
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: -20px;
+
+  @media screen and (max-width: (768px - 1)) {
+    margin-top: 1100px;
   }
-  
-  .team-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  
-    margin: -20px;
-  
-    @media screen and (max-width: (768px - 1)) {
-      margin-top: 1100px;
-    }
-  
-    width: 240px;
-  
-    background-color: white;
-    border-radius: 15px;
-  
-    @media screen and (min-width: 768px) {
-      width: 600px;
-  
-      border-radius: 25px;
-    }
-  
-    @media screen and (min-width: 1024px) {
-      margin: -30px;
-  
-      width: 800px;
-    }
+
+  width: 240px;
+
+  background-color: white;
+  border-radius: 15px;
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+
+    border-radius: 25px;
   }
-  
-  .team-card {
-    position: relative;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 30px;  
-    margin: 26px;
-  
-    width: calc((100% - 80px) / 1);
-  
-    @media screen and (min-width: 768px) {
-      width: calc((100% - 160px) / 3);
-      padding-left: 5px;
-    }
-  
-    @media screen and (min-width: 1024px) {
-      margin: 40px;
-      
-      width: calc((100% - 240px) / 3);
-    }
+
+  @media screen and (min-width: 1024px) {
+    margin: -30px;
+
+    width: 800px;
   }
-  
-  .team-image {
-    margin-bottom: 10px;
-    //  width: 100%;
-    width: 160px;
-    height: 170px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 11px -2px black;
+}
+
+.team-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 30px;
+  margin: 26px;
+
+  width: calc((100% - 80px) / 1);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 160px) / 3);
+    padding-left: 5px;
   }
-  
-  .team-name {
-    margin-bottom: 5px;
-  
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+
+  @media screen and (min-width: 1024px) {
+    margin: 40px;
+
+    width: calc((100% - 240px) / 3);
   }
-  
-  .team-role {
-    font-family: 'Roboto', sans-serif;
-  
-    @media screen and (max-width: (768px - 1)) {
-      font-size: 14px;
-    }
-  
-    color: var(--accent-color);
+}
+
+.team-image {
+  margin-bottom: 10px;
+  //  width: 100%;
+  width: 160px;
+  height: 170px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 11px -2px black;
+}
+
+.team-name {
+  margin-bottom: 5px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.team-role {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+
+  @media screen and (max-width: (768px - 1)) {
   }
-  
-  
-  // footer
-  
-  .team-modal {
-    text-decoration: underline;
-  
-    cursor: pointer;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
   }
+
+  color: var(--accent-color);
+}
+
+// footer
+
+.team-modal {
+  text-decoration: underline;
+
+  cursor: pointer;
+}
