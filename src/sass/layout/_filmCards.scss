@@ -1,23 +1,31 @@
-.cards-film_list,
-.library-film_list {
-  margin-top: 20px;
-  width: 100%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.section-cards-film {
+  padding-top: 20px;
+  padding-bottom: 40px;
   @media screen and (min-width: 768px) {
-    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   @media screen and (min-width: 1280px) {
-    margin-bottom: 60px;
+  }
+}
+
+.cards-film_list,
+.library-film_list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: -32px;
+    margin-bottom: 28px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: -16px;
   }
 }
 
 .film-card {
-  margin-bottom: 20px;
-
   @media screen and (min-width: 768px) {
-    margin-bottom: 32px;
   }
   @media screen and (min-width: 1280px) {
   }
@@ -36,6 +44,23 @@
     width: 395px;
     height: 574px;
   }
+  transform: scale(1);
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px #ff6b08;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  // &:hover,
+  // &:focus {
+  //   box-shadow: 7px -7px 21px rgba (255, 107, 1, 0.6);
+  //   opacity: 0.9;
+  // }
 }
 .info {
   padding-top: 8px;
@@ -78,16 +103,16 @@
 
 .library-film_list li,
 .cards-film_list li {
+  margin-bottom: 20px;
+
   // border: solid 1px #ff6b08;
-  transform: scale(1);
-  &:hover,
-  &:focus {
-    transform: scale(1.02);
-    border-radius: 3px;
-    box-shadow: 0px 3px 3px #ff6b08;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      border-radius 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+    margin-right: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 15px;
   }
 }
