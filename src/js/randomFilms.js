@@ -14,7 +14,7 @@ export const galleryApi = new GalleryApi();
 
 export const containerPagination = document.querySelector('.pagination');
 export const pagination = new Pagination(containerPagination, {
-  itemsPerPage: galleryApi.perPage,
+  itemsPerPage: 20,
   visiblePages: 5,
   centerAlign: true,
   firstItemClassName: 1,
