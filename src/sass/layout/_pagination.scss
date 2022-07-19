@@ -40,6 +40,9 @@
   background-image: url(../images/pagination/arrow_right.svg);
   background-repeat: no-repeat;
   background-position: center;
+  body.night & {
+    background-image: url(../images/pagination/ar_right_w.svg);
+  }
 }
 
 .move-btn-prev {
@@ -47,9 +50,17 @@
   background-image: url(../images/pagination/arrow_left.svg);
   background-repeat: no-repeat;
   background-position: center;
+  body.night & {
+    background-image: url(../images/pagination/ar_left_w.svg);
+  }
 }
 
 .move-btn-first,
 .move-btn-last {
   display: none;
+}
+.page-btn {
+  body.night & {
+    color: #fff;
+  }
 }
