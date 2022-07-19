@@ -2,7 +2,9 @@ import { galleryApi } from './randomFilms';
 import createModalCards from '../templates/modalCards.hbs';
 import { onModalClick } from './localStorage';
 import { deleteFilmFromMarkup } from './deleteFilmFromLibrary';
+import { ImdbApi } from './imdbApi';
 
+const imdbApi = new ImdbApi();
 const modal = document.querySelector('.modal');
 
 export const onPosterClick = event => {
@@ -26,6 +28,8 @@ export const onPosterClick = event => {
       modal.closest('.backdrop').classList.remove('is-hidden');
       modal.addEventListener('click', onModalClick);
       document.addEventListener('keydown', onKeyboardPress);
+      const titleQuery = document.querySelector('.modal__tatel').textContent;
+      return titleQuery;
     })
     .then(titleQuery => {
       imdbApi.query = titleQuery;
