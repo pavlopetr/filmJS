@@ -51,11 +51,16 @@ export const onModalClick = event => {
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
 
-      if (location.href === 'http://localhost:1234/library.html') {
+      if (location.href === 'http://localhost:58261/library.html') {
         deleteFilmFromMarkup(event);
       }
+      // if (
+      //   location.href ===
+      //   'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
+      // ) {
+      //   deleteFilmFromMarkup(event);
+      // }
 
-      event.currentTarget.removeEventListener('click', onModalClick);
       document.removeEventListener('keydown', onKeyboardPress);
       break;
 
