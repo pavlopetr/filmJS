@@ -5,7 +5,6 @@ import {
   changeDateInArrayOfResults,
   createArrayOfGenres,
 } from './datesForMarkup';
-import { changePerPageOfQuery } from './perPageMediaRule';
 import { onPosterClick } from './modal';
 import { updateDataForLocalStorage } from './localStorage';
 import createFilmCards from '../templates/filmCards.hbs';
@@ -38,13 +37,12 @@ export const createRandomMarkup = page => {
   galleryApi
     .fetchTrendingMovies(page)
     .then(data => {
-      changePerPageOfQuery();
       changeIdOfGenreToName(data.results);
       changeDateInArrayOfResults(data.results);
       containerEl.innerHTML = createFilmCards(data.results);
       containerEl.addEventListener('click', onPosterClick);
 
-      if (page === 1) pagination.reset(response.total_results);
+      if (page === 1) pagination.reset(data.total_results);
     })
     .catch(error => console.log(error));
 };

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://api.themoviedb.org/';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 export class GalleryApi {
   #API_KEY = 'f529977bca559aa35fc4139c14353d12';
@@ -23,17 +23,16 @@ export class GalleryApi {
       page: this.page,
     };
 
-    return axios(`3/search/movie`).then(response => response.data);
+    return axios(`/search/movie`).then(response => response.data);
   }
 
   fetchTrendingMovies(page) {
     axios.defaults.params = {
       api_key: this.#API_KEY,
-      per_page: this.perPage,
       page: page,
     };
 
-    return axios(`3/trending/movie/day`).then(response => response.data);
+    return axios(`/trending/movie/day`).then(response => response.data);
   }
 
   fetchGenres() {
@@ -42,13 +41,13 @@ export class GalleryApi {
       language: 'en-US',
     };
 
-    return axios(`3/genre/movie/list`).then(response => response.data.genres);
+    return axios(`/genre/movie/list`).then(response => response.data.genres);
   }
 
   fetchMovieById(id) {
     axios.defaults.params = {
       api_key: this.#API_KEY,
     };
-    return axios(`3/movie/${id}`).then(response => response.data);
+    return axios(`/movie/${id}`).then(response => response.data);
   }
 }
