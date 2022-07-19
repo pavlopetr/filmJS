@@ -11,6 +11,7 @@ export const onModalClick = event => {
   const btnWatchModalEl = event.currentTarget.querySelector('.js-watch');
   const btnQueueModalEl = event.currentTarget.querySelector('.js-queue');
   const backStageEl = document.querySelector('.backstage');
+  const modalEl = document.querySelector('.modal');
   const filmID = event.target.dataset.id;
 
   switch (event.target.dataset.action) {
@@ -49,6 +50,16 @@ export const onModalClick = event => {
       break;
     case 'YouTube':
       backStageEl.classList.remove('is-hidden');
+      const backStgEl = document.querySelector('.backstage');
+      const playerEl = document.querySelector('.youTubeTrailer');
+      modalEl.classList.add('is-hidden');
+      backStgEl.addEventListener('click', e => {
+        if ((e.target.dataset.action = 'close')) {
+          backStageEl.classList.add('is-hidden');
+          playerEl.src = `${playerEl.src}`;
+          modalEl.classList.remove('is-hidden');
+        }
+      });
       break;
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
