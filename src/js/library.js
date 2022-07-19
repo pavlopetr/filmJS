@@ -19,7 +19,6 @@ buttonQueueEl.addEventListener('click', onButtonQueueEl);
 if (window.innerWidth < 768) cardsQuantity = 4;
 else if (window.innerWidth < 1200) cardsQuantity = 8;
 else cardsQuantity = 9;
-export default cardsQuantity;
 
 const containerPagination = document.querySelector('.pagination');
 const paginationLibraryWatch = new Pagination(containerPagination, {
