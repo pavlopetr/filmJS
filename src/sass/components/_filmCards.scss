@@ -37,18 +37,17 @@
   }
 }
 .info {
-  //   padding-top: 12px;
-  //   max-width: 280px;
-  //   max-height: 32px;
-  //   font-family: 'Roboto';
-  //   font-style: normal;
-  //   font-weight: 500;
-  //   font-size: 12px;
-  //   line-height: 1.33;
-  //   text-transform: uppercase;
+  padding-top: 8px;
+  max-width: 280px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 
   @media screen and (min-width: 768px) {
     max-width: 336px;
+    padding-top: 12px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 20px;
@@ -68,12 +67,26 @@
 .film-genre {
   color: #ff6b08;
 }
-.film-year {
-}
 .film-raiting {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
+  font-size: 20px;
   line-height: 1.33;
+  background-color: #ff6b08;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.library-film_list li,
+.cards-film_list li {
+  // border: solid 1px #ff6b08;
+  transform: scale(1);
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px #ff6b08;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
