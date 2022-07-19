@@ -49,16 +49,16 @@ export const onKeyboardPress = event => {
     modal.closest('.backdrop').classList.add('is-hidden');
   }
 
-  if (location.href === 'http://localhost:50174/library.html') {
-    deleteFilmFromMarkup(event);
-  }
-
-  // if (
-  //   location.href ===
-  //   'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
-  // ) {
+  // if (location.href === 'http://localhost:50174/library.html') {
   //   deleteFilmFromMarkup(event);
   // }
+
+  if (
+    location.href ===
+    'https://mykhailotsynkevych.github.io/Filmoteka/library.html'
+  ) {
+    deleteFilmFromMarkup(event);
+  }
 
   modal.removeEventListener('click', onModalClick);
   document.removeEventListener('keydown', onKeyboardPress);
