@@ -26,11 +26,11 @@ export class GalleryApi {
     return axios(`3/search/movie`).then(response => response.data);
   }
 
-  fetchTrendingMovies() {
+  fetchTrendingMovies(page) {
     axios.defaults.params = {
       api_key: this.#API_KEY,
       per_page: this.perPage,
-      page: this.page,
+      page: page,
     };
 
     return axios(`3/trending/movie/day`).then(response => response.data);
