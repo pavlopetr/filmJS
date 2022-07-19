@@ -32,5 +32,12 @@
   right: 5%;
 }
 .youTubeTrailer {
-  width: 704px;
+  width: 560px;
+  height: 315px;
+  @media screen and (min-width: 768px) {
+    width: 704px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 806px;
+  }
 }

@@ -49,6 +49,14 @@ export const onModalClick = event => {
       break;
     case 'YouTube':
       backStageEl.classList.remove('is-hidden');
+      const backStgEl = document.querySelector('.backstage');
+      const playerEl = document.querySelector('.youTubeTrailer');
+      backStgEl.addEventListener('click', e => {
+        if ((e.target.dataset.action = 'close')) {
+          backStageEl.classList.add('is-hidden');
+          playerEl.src = `${playerEl.src}`;
+        }
+      });
       break;
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
