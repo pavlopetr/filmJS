@@ -54,6 +54,10 @@
       border-radius 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    body.night & {
+      box-shadow: 0px 3px 3px #13b3ff;
+    }
+    cursor: pointer;
   }
 
   // &:hover,
@@ -92,14 +96,21 @@
 
 .film-genre {
   color: #ff6b08;
+  body.night & {
+    color: #13b3ff;
+  }
 }
 .film-raiting {
   padding: 3px 5px;
   font-size: 12px;
   line-height: 1.16;
   background-color: #ff6b08;
+
   color: #fff;
   border-radius: 5px;
+  body.night & {
+    background-color: #13b3ff;
+  }
 }
 
 .library-film_list li,

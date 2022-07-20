@@ -93,3 +93,8 @@ input:checked[type='checkbox']:after {
     margin-bottom: 80vh;
   }
 }
+.is-selected {
+  body.night & {
+    background-color: #13b3ff;
+  }
+}

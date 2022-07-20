@@ -22,8 +22,6 @@
   // }
 }
 
-
-
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -36,8 +34,7 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14),
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 5s linear;
@@ -80,7 +77,6 @@
   right: 8px;
   top: 8px;
 
-
   background: #ffffff;
   border: none;
   box-sizing: border-box;
@@ -90,14 +86,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
-
-
-
-
-
-
 
 // --------------
 
@@ -132,7 +120,6 @@
   }
 }
 
-
 .info-items {
   display: flex;
   align-items: baseline;
@@ -148,8 +135,6 @@
   color: #8c8c8c;
   min-width: 108px;
 }
-
-
 
 .votes-box {
   font-size: 12px;
@@ -168,6 +153,9 @@
   background-color: #ff6b01;
   border-radius: 5px;
   color: #ffffff;
+  body.night & {
+    background-color: #13b3ff;
+  }
 }
 
 .modal__votes {
@@ -180,7 +168,6 @@
   font-size: 12px;
   line-height: 14px;
   color: var(--primaryTextColor);
-
 }
 
 .origenal__tatel {
@@ -188,14 +175,12 @@
   line-height: 1.16;
   text-transform: uppercase;
   color: var(--primaryTextColor);
-
 }
 
 .modal__genre {
   font-size: 12px;
   line-height: 1.16;
   color: var(--primaryTextColor);
-
 }
 
 .gender_ris {
@@ -247,7 +232,8 @@
 }
 
 .btn__add:not(:last-child) {
-  @media screen and (min-width: 1280px) {}
+  @media screen and (min-width: 1280px) {
+  }
 
   margin-right: 15px;
 }
@@ -256,4 +242,25 @@
   color: var(--secondaryTextColor);
   border: none;
   background-color: #ff6b01;
+  body.night & {
+    background-color: #13b3ff;
+    // border: 1px solid rgb(0, 0, 0); box-shadow: none; color: rgb(0, 0, 0);"
+  }
+}
+.btn__youTube {
+  background-color: transparent;
+  background-image: url(../images/YouTube-Logo.wine.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 60px;
+  border: none;
+  // margin-top: 10px;
+  margin-left: 50px;
+  @media screen and (min-width: 768px) {
+    margin-left: 65px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 20px;
+  }
 }
