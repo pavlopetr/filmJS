@@ -10,7 +10,7 @@ export const changeColorBtnLibraryClick = (event, btnNotTarget) => {
     event.target.style.backgroundColor = '#63cdff';
     event.target.style.boxShadow = '0 4px 21px 0 rgb(83 197 250 / 59%)';
   } else {
-    event.target.style.backgroundColor = '#6dd1ff';
+    event.target.style.backgroundColor = '#ff6b01';
     event.target.style.boxShadow = '0 4px 21px 0 rgb(255 107 8 / 59%)';
   }
 };
