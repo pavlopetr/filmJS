@@ -70,7 +70,7 @@ function createMarkupWatchLocalStorage() {
   alertInfo.innerHTML = '';
 
   const arrayWatch = ls.load(`toWatch`);
-
+  const libEL = document.querySelector('.library_alert');
   if (!arrayWatch || arrayWatch.length === 0) {
     alertInfo.innerHTML = "You don't have watched films in your library";
     containerPagination.remove();
