@@ -18,7 +18,7 @@ export class ImdbApi {
       const trailerUrlId = await this.fetchTrailer(trailerId);
       return trailerUrlId;
     } catch (error) {
-      Notiflix.Notify.info('serch error ');
+      console.log('serch error ');
     }
   };
 
@@ -31,7 +31,7 @@ export class ImdbApi {
       // console.log('Trailer ID :>> ', trailerUrlId);
       return trailerUrlId;
     } catch (error) {
-      Notiflix.Notify.failure('error Trailer');
+      console.log('error Trailer');
     }
   };
 }
