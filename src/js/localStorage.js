@@ -52,9 +52,9 @@ export const onModalClick = event => {
     case 'close':
       event.currentTarget.closest('.backdrop').classList.add('is-hidden');
 
-      // if (location.href === 'http://localhost:50174/library.html') {
-      //   deleteFilmFromMarkup(event);
-      // }
+      if (location.href === 'http://localhost:60443/library.html') {
+        deleteFilmFromMarkup(event);
+      }
       if (
         location.href ===
         'https://mykhailotsynkevych.github.io/Filmoteka/library.html'

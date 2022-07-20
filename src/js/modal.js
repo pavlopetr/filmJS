@@ -49,9 +49,9 @@ export const onKeyboardPress = event => {
     modal.closest('.backdrop').classList.add('is-hidden');
   }
 
-  // if (location.href === 'http://localhost:50174/library.html') {
-  //   deleteFilmFromMarkup(event);
-  // }
+  if (location.href === 'http://localhost:60443/library.html') {
+    deleteFilmFromMarkup(event);
+  }
 
   if (
     location.href ===
