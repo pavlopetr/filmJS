@@ -73,8 +73,7 @@ function createMarkupWatchLocalStorage() {
   const libEL = document.querySelector('.library_alert');
   if (!arrayWatch || arrayWatch.length === 0) {
     alertInfo.innerHTML = "You don't have watched films in your library";
-    paginationLibraryWatch.reset(0);
-    libEL.classList.add('empty');
+    containerPagination.remove();
     return;
   }
 
@@ -92,8 +91,7 @@ function createMarkupQueueLocalStorage() {
 
   if (!arrayQueue || arrayQueue.length === 0) {
     alertInfo.innerHTML = "You don't have films in queue in your library";
-    paginationLibraryQueue.reset(0);
-    libEL.classList.add('empty');
+    containerPagination.remove();
     return;
   }
 
