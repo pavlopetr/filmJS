@@ -73,9 +73,17 @@ function createMarkupWatchLocalStorage() {
 
   if (!arrayWatch || arrayWatch.length === 0) {
     alertInfo.innerHTML = "You don't have watched films in your library";
-    paginationLibraryWatch.reset(0);
+    containerPagination.remove();
     return;
   }
+  // if (
+  //   !arrayWatch ||
+  //   arrayWatch.length === 0 ||
+  //   arrayWatch.length <= cardsQuantity
+  // ) {
+  //   containerPagination.remove();
+  //   return;
+  // }
 
   const arrayForRenderFirstPage = arrayWatch.slice(0, cardsQuantity);
   renderLibraryMarkup(arrayForRenderFirstPage);
@@ -91,9 +99,17 @@ function createMarkupQueueLocalStorage() {
 
   if (!arrayQueue || arrayQueue.length === 0) {
     alertInfo.innerHTML = "You don't have films in queue in your library";
-    paginationLibraryQueue.reset(0);
+    containerPagination.remove();
     return;
   }
+  // if (
+  //   !arrayQueue ||
+  //   arrayQueue.length === 0 ||
+  //   arrayQueue.length <= cardsQuantity
+  // ) {
+  //   containerPagination.remove();
+  //   return;
+  // }
 
   const arrayForRenderFirstPage = arrayQueue.slice(0, cardsQuantity);
   renderLibraryMarkup(arrayForRenderFirstPage);
