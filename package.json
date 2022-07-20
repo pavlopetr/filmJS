@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://mykhailotsynkevych.github.io/Filmoteka",
+  "homepage": "https://filmJS.github.io/filmJS",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Filmoteka/"
+    "build": "parcel build src/*.html --public-url /filmJS/"
   },
   "repository": {
     "type": "git",
